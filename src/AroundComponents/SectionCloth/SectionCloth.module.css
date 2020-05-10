@@ -1,0 +1,286 @@
+.sectionClothBlock{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 2rem 0;
+    height: 850px;
+    flex-wrap: wrap;
+}
+.sectionClothStyled {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sectionClothItem {
+    position: relative;
+    overflow: hidden;
+}
+
+.sectionCloth {
+    height: 100%;
+    transition: 0.2s ease;
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -ms-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+}
+.sectionCloth:hover {
+    transform: scale(1.25);
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -o-transform: scale(1.25);
+}
+
+.clothMessage {
+    z-index: 100000;
+    position: absolute;
+    top:50%;
+    left:50%;
+    font-weight: bold;
+    visibility: hidden;
+    padding: 0.3rem 2.5rem;
+    background-color: rgb(252, 250, 250);
+    margin-left:-100px;
+    margin-top:-50px
+}
+.sectionClothItem:hover .clothMessage {
+   visibility: visible;
+}
+.linkPick {
+    text-decoration: none;
+    color: black;
+}
+.clothMessage:hover .linkPick,
+.clothMessage:active .linkPick {
+    color: white;
+}
+
+.clothMessage:hover,
+.clothMessage:active {
+    background-color: black;
+    color: white;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width:1860px) {
+    .sectionClothStyled {
+        height: 380px;
+    }
+    .sectionClothBlock{
+        height: 810px;
+    }
+}
+
+@media (max-width:1770px) {
+    .sectionClothStyled {
+        height: 365px;
+    }
+    .sectionClothBlock{
+        height: 780px;
+    }
+}
+
+@media (max-width:1700px) {
+    .sectionClothStyled {
+        height: 350px;
+    }
+    .sectionClothBlock{
+        height: 750px;
+    }
+}
+@media (max-width:1630px) {
+    .sectionClothStyled {
+        height: 340px;
+    }
+    .sectionClothBlock{
+        height: 725px;
+    }
+}
+
+@media (max-width:1580px) {
+    .sectionClothStyled {
+        height: 325px;
+    }
+    .sectionClothBlock{
+        height: 690px;
+        
+    }
+
+}
+
+@media (max-width:1510px) {
+    .sectionClothStyled {
+        height: 310px;
+    }
+    .sectionClothBlock{
+        height: 670px;
+        
+    }
+
+}
+
+@media (max-width:1440px) {
+    .sectionClothStyled {
+        height: 290px;
+    }
+    .sectionClothBlock{
+        height: 630px;
+        
+    }
+
+}
+
+@media (max-width:1370px) {
+    .sectionClothStyled {
+        height: 280px;
+    }
+    .sectionClothBlock{
+        height: 610px;
+    }
+}
+
+@media (max-width:1320px) {
+    .sectionClothStyled {
+        height: 265px;
+    }
+    .sectionClothBlock{
+        height: 570px;
+    }
+}
+
+@media (max-width:1250px) {
+    .sectionClothStyled {
+        height: 250px;
+    }
+    .sectionClothBlock{
+        height: 550px;
+    }
+}
+
+@media (max-width:1164px) {
+    .sectionClothStyled {
+        height: 235px;
+    }
+    .sectionClothBlock{
+        height: 510px;
+    }
+}
+
+@media (max-width:1100px) {
+    .sectionClothStyled {
+        height: 215px;
+    }
+    .sectionClothBlock{
+        height: 480px;
+    }
+}
+
+
+@media (max-width:1018px) {
+    .sectionClothStyled {
+        height: 200px;
+    }
+    .sectionClothBlock{
+        height: 440px;
+    }
+}
+
+@media (max-width:936px) {
+    .sectionClothStyled {
+        height: 180px;
+    }
+    .sectionClothBlock{
+        height: 400px;
+    }
+}
+
+@media (max-width:855px) {
+    .sectionClothStyled {
+        height: 230px;
+    }
+    .sectionCloth {
+        width: 370px;
+    }
+
+    .sectionClothBlock{
+        height: 800px;
+    }
+}
+
+@media (max-width:783px) {
+    .sectionCloth {
+        width: 340px;
+    }
+    .sectionClothStyled {
+        height: 220px;
+    }
+
+    .sectionClothBlock{
+        height: 730px;
+    }
+}
+
+@media (max-width:722px) {
+    .sectionCloth {
+        width: 450px;
+    }
+    .sectionClothStyled {
+        height: 300px;
+    }
+
+    .sectionClothBlock{
+        height: 2000px;
+        padding: 0;
+    }
+
+
+}
+
+@media (max-width:583px) {
+    .sectionCloth {
+        width: 410px;
+    }
+    .sectionClothStyled {
+        height: 270px;
+    }
+
+    .sectionClothBlock{
+        height: 1850px;
+    }
+
+}
+
+@media (max-width:507px) {
+    .sectionCloth {
+        width: 360px;
+    }
+
+}
+
+@media (max-width:438px) {
+    .sectionCloth {
+        width: 320px;
+    }
+    .sectionClothStyled {
+        height: 240px;
+    }
+    .sectionClothBlock{
+        height: 1650px;
+    }
+
+}
+
+@media (max-width:390px) {
+    .sectionCloth {
+        width: 270px;
+    }
+    .sectionClothStyled {
+        height: 200px;
+    }
+    .sectionClothBlock{
+        height: 1500px;
+    }
+
+}

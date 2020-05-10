@@ -1,0 +1,153 @@
+.navigationBottomBlock {
+    padding: 3.42rem 4rem;
+    background-color: rgb(24, 23, 23);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.navigationBottomBlockOf2 {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.navigationBottomHeader {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.navigationBottomLink {
+    list-style: none;
+    margin-bottom: 0.7rem;
+}
+
+.navigationBottomText {
+    margin-bottom: 1rem;
+}
+
+.navigationBottomMediaContacts {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    margin: 0 0 2rem 0.5rem;
+}
+
+.navigationBottomAuthor {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+}
+
+.credits {
+    color: white !important;
+    font-size: 0.5rem;
+    margin-top: 2rem;
+}
+
+.credits a {
+    color: white;
+    text-decoration: none;
+}
+/* /* MEDia queries */
+@media(max-width:1800px) {
+    .navigationBottomHeader {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    .navigationBottomLink,
+    .navigationBottomText {
+       font-size: 0.9rem;
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width:1700px) {   
+    .navigationBottomBlockOf2 {
+        width: 40%;
+    }
+}
+
+
+
+
+
+@media (max-width:1200px) {   
+    .navigationBottomHeader {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .link,
+    .navigationBottomText {
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
+    }
+    
+
+}
+
+@media (max-width:1064px) {   
+    .navigationBottomBlockOf2 {
+        display: block
+    }
+    .navigationBottomInformation {
+        margin-bottom: 2rem;
+    }
+    .navigationBottomHeader {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+}
+
+@media (max-width:784px) {   
+    .navigationBottomBlock {
+        padding: 3.42rem 2rem;
+}
+}
+
+@media (max-width:659px) {   
+    .navigationBottomBlock {
+        display: block;
+    }
+    .navigationBottomAbout {
+        margin-bottom:2rem ;
+
+    }
+    .navigationBottomBlockOf2 {
+        width: 100%;
+    }
+    .navigationBottomAuthor {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navigationBottomText {
+        width:100%
+    }
+    .navigationBottomGithub {
+        display: none;
+    }
+    .credits {
+        width: 100%;
+        margin-top: 0rem;
+    }
+
+}
+
+@media (max-width:560px) { 
+
+    .navigationBottomText {
+        margin-bottom: 0.5rem;
+        font-size: 0.75rem;
+    }
+    .link,
+    .navigationBottomText {
+        font-size: 0.75rem;
+    }
+}

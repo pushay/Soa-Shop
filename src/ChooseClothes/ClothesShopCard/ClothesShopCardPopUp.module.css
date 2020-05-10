@@ -1,0 +1,142 @@
+.clothesShopCardPopUpBlock {
+    position: fixed;
+    top:0;
+    right:0;
+    background-color: rgb(255, 255, 255);
+    width: 450px;
+    z-index: 10000000000;
+    padding: 1.5rem 1.5rem 0 2rem; 
+    border: 10px solid rgb(241, 241, 241);
+    overflow-y: scroll;
+    height: 150px;
+    
+}
+
+.clothesShopCardPopUpList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    
+}
+
+.clothesShopCardPopUpItem {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    height:100%
+    
+}
+
+.clothesShopCardPopUpImage {
+    width: 150px;
+    height: 120px;
+}
+
+.clothesShopCardPopUpTextArea {
+    width: 100%;
+    margin-left:2rem
+}
+
+.clothesShopCardPopUpHeader {
+    font-size: 1rem;
+}
+
+.clothesShopCardPopUpLittleBlock {
+    display: flex;
+    
+}
+.clothesShopCardPopUpText {
+    font-size: 0.75rem;
+}
+.clothesShopCardPopUpItemRemove {
+    display: flex;
+    margin-left: 4rem;
+    border: none;
+    background-color: black;
+    color:white;
+    padding: 0.04rem 1rem;
+    font-family: inherit;
+    font-size: 0.65rem;
+}
+
+.clothesShopCardPopUpRemoveBlock {
+    position: absolute;
+    top:2%;
+    right:5%;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width:1450px) {
+    .clothesShopCardPopUpBlock {
+        width: 340px;
+        padding: 1.2rem 1.5rem 0 1.2rem; 
+        
+    }
+    .clothesShopCardPopUpImage {
+        width: 120px;
+        height: 90px;
+    }
+    .clothesShopCardPopUpHeader {
+        font-size: 0.8rem;
+    }
+ 
+ }
+ 
+ 
+@media (max-width:1191px) {
+    .clothesShopCardPopUpBlock {
+        width: 260px;
+        height: 270px;
+        padding: 1.2rem 1.5rem 0 1.2rem; 
+        
+    }
+    .clothesShopCardPopUpHeader {
+        font-size: 0.8rem;
+    }
+    .clothesShopCardPopUpImage {
+        width: 100px;
+        height: 80px;
+    }
+    .clothesShopCardPopUpTextArea {
+        width: 100%;
+        margin-left:1rem
+    }
+    .clothesShopCardPopUpText {
+        font-size: 0.7rem;
+    }
+ 
+ }
+ 
+ 
+@media (max-width:1014px) {
+    .clothesShopCardPopUpBlock {
+        width: 180px;
+        height: 270px;
+    }
+    .clothesShopCardPopUpImage {
+        display: none;
+    }
+    .clothesShopCardPopUpTextArea {
+        width: 100%;
+        margin-left:0rem
+    }
+ }
+ 
+ @media (max-width:750px) {
+    .clothesShopCardPopUpBlock {
+        width: 145px;
+        height: 155px;
+        padding: 0.5rem 1.5rem 0 0.5rem;
+        border: 8px solid rgb(241, 241, 241);
+        
+    }
+ }
+@media (max-width:630px) {
+    .clothesShopCardPopUpBlock {
+        display: none !important;
+
+        }
+ }
+ 

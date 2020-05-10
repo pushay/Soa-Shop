@@ -1,0 +1,22 @@
+
+/* base */
+:root {
+    --color-primary:#FF6534;
+}
+
+* {
+    margin:0;
+    padding:0;
+    line-height: 1.60;
+}
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}

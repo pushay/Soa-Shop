@@ -1,0 +1,512 @@
+.seeChosenClothSection {
+    padding: 8rem 3.5rem;
+    
+}
+
+.seeChosenClothBlock {
+    display: flex;
+    justify-content: space-between;
+    }
+/* CLOTH PART SIDE */
+/* .seeChosenCloth {*/
+
+.seeChosenClothImage {
+    height: 700px;
+    width: 1100px;
+}
+/* DESCRIPTION PART */
+.seeChosenDescription {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.seeChosenTitleHeader {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.seeChosenHeader {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.seeChosenSizeSpanBlock {
+    display: flex;
+    width: 260px;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+   
+}
+
+.seeChosenSizeSpan {
+    font-weight: bold;
+    width: 35px;
+    height: 30px;
+    border:1px solid rgb(85, 77, 77);
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.seeChosenSizeSpan:hover {
+    background-color:black !important;
+    color:white !important; 
+}
+/* QUALITY PART */
+.seeChosenQuality
+
+.seeChosenQualityBlock {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin-bottom: 1rem;
+}
+
+.seeChosenQualitySpan {
+    font-size: 1rem;    
+}
+
+.seeChosenQualitySpan::after {
+    display:block;
+    content: '';
+    border-bottom: solid 1px #0c0d0e;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+    -webkit-transition: transform 0.2s ease-in-out;
+    -moz-transition: transform 0.2s ease-in-out;
+    -ms-transition: transform 0.2s ease-in-out;
+    -o-transition: transform 0.2s ease-in-out;
+}
+
+.seeChosenQualitySpan:hover::after {
+    transform: scaleX(1);
+}
+
+/* TEXT PART */
+
+.seeChosenTextBlock {
+    width: 500px;
+    margin-bottom: 2rem;
+}
+.seeChosenTextElement {
+    font-size: 1rem;
+}
+/* BUTTON */
+.seeChosenButtonBlock {
+    margin-bottom:1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+} 
+
+.seeChosenButton {
+    padding: 0.3rem 3rem;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: rgb(24, 23, 23);
+    cursor: pointer;
+    font-size: 0.9rem
+
+}
+
+.seeChosenButton:focus {
+    outline: none;
+}
+
+.shoppingCardLink {
+    padding: 0.3rem 3.5rem;
+    border: none;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(24, 23, 23);
+    cursor: pointer;
+    font-size: 0.9rem
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width:1834px) {
+
+    .seeChosenClothImage {
+        height: 650px;
+        width: 1050px;
+    }
+}
+
+@media (max-width:1784px) {
+    .seeChosenClothSection {
+        padding: 8rem 1.5rem 8rem 3.5rem;
+        
+    }
+
+}
+
+@media (max-width:1737px) {
+    .seeChosenClothImage {
+        height: 600px;
+        width: 1000px;
+    }
+    .seeChosenTextElement {
+        font-size: 0.95rem;
+    }
+    .seeChosenQualitySpan {
+        font-size: 0.95rem;    
+    }
+    .seeChosenSizeSpan {
+        font-size: 0.7rem;
+        
+    }
+}
+
+@media (max-width:1690px) {
+    .seeChosenClothImage {
+        width: 960px;
+    }
+}
+
+@media (max-width:1642px) {
+    .seeChosenClothSection {
+        padding: 8rem 1rem 8rem 3.5rem;
+        
+    }
+    .seeChosenClothImage {
+        width: 930px;
+    }
+}
+
+@media (max-width:1600px) {
+    .seeChosenClothImage {
+        width: 890px;
+    }
+}
+
+@media (max-width:1560px) {
+    .seeChosenClothImage {
+        width: 850px;
+    }
+}
+
+@media (max-width:1521px) {
+    .seeChosenClothImage {
+        width: 810px;
+    }
+    .seeChosenTextElement {
+        font-size: 0.9rem;
+    }
+    .seeChosenQualitySpan {
+        font-size: 0.9rem;    
+    }
+    .seeChosenSizeSpan {
+        font-size: 0.65rem;
+        
+    }
+    .seeChosenButton {
+        padding: 0.3rem 2.5rem;
+        font-size: 0.8rem
+    
+    }
+    .shoppingCardLink {
+        padding: 0.3rem 3rem;
+        font-size: 0.8rem
+    }
+    .seeChosenButtonBlock {
+        width: 400px;    
+    }
+    .seeChosenTitleHeader {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+    .seeChosenHeader {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+}
+
+@media (max-width:1476px) {
+    .seeChosenClothImage {
+        width: 770px;
+        height: 530px;
+    }
+    .seeChosenClothSection {
+        padding: 8rem 1rem 5rem 3.5rem;
+        
+    }
+    
+}
+
+@media (max-width:1431px) {
+    .seeChosenClothImage {
+        width: 720px;
+        height: 510px;
+    }
+    
+}
+
+@media (max-width:1390px) {
+    .seeChosenClothImage {
+        width: 670px;
+        height: 480px;
+    }
+}
+
+@media (max-width:1332px) {
+    .seeChosenClothImage {
+        width: 620px;
+        height: 420px;
+    }
+    
+}
+@media (max-width:1287px) {
+    .seeChosenClothImage {
+        width: 580px;
+        height: 400px;
+    }
+    
+}
+
+@media (max-width:1237px) {
+    .seeChosenClothImage {
+        width: 530px;
+        height: 380px;
+    }
+    
+}
+
+@media (max-width:1195px) {
+    .seeChosenClothImage {
+        width: 490px;
+        height: 360px;
+    }
+    .seeChosenTitleHeader {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+    .seeChosenHeader {
+        font-size: 0.85rem;
+    }
+   
+}
+
+@media (max-width:1153px) {
+    .seeChosenDescription {
+        width: 500px;
+    }
+    .seeChosenTextElement {
+        width: 430px;
+    }
+    .seeChosenTextBlock {
+        width: 450px;
+    }
+}
+
+
+@media (max-width:1110px) {
+    .seeChosenDescription {
+        width: 460px;
+    } 
+}
+
+@media (max-width:1063px) {
+    .seeChosenDescription {
+        width: 400px;
+    }
+    .seeChosenTextElement {
+        width: 360px;
+    }
+    .seeChosenButton {
+        padding: 0.3rem 2rem;
+    }
+    .shoppingCardLink {
+        padding: 0.3rem 2.5rem;
+     
+    }
+    .seeChosenButtonBlock {
+        width: 350px;    
+    }
+    .seeChosenTextBlock {
+        width: 400px;
+    }
+}
+@media (max-width:1005px) {
+    .seeChosenDescription {
+        width: 360px;
+    }
+    .seeChosenTextElement {
+        width: 320px;
+    }
+    .seeChosenButton {
+        padding: 0.3rem 1.5rem;
+    }
+    .shoppingCardLink {
+        padding: 0.3rem 2rem;
+     
+    }
+    .seeChosenButtonBlock {
+        width: 300px;    
+    }
+    .seeChosenTextBlock {
+        width: 370px;
+    }
+}
+
+@media (max-width:962px) {
+    .seeChosenClothImage {
+        width: 450px;
+        height: 340px;
+    }
+}
+
+@media (max-width:918px) {
+    .seeChosenClothSection {
+        padding: 8rem 1rem 5rem 2.5rem;
+    }
+    .seeChosenClothImage {
+        width: 420px;
+        height: 310px;
+    }
+}
+
+@media (max-width:870px) {
+    .seeChosenClothImage {
+        width: 390px;
+    }
+    .seeChosenButton,
+    .shoppingCardLink {
+       padding: 0.2rem 1.7rem;
+    }
+}
+
+@media (max-width:834px) {
+    .seeChosenClothImage {
+        width: 350px;
+        height: 280px;
+    }
+}
+
+@media (max-width:800px) {
+    .seeChosenClothBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+
+    .seeChosenClothImage {
+        width: 600px;
+        height: 370px;
+        margin-bottom:3rem;
+        width: 100%;
+        }
+
+    .seeChosenClothSection {
+            padding: 6rem 5rem;
+            
+        }
+    .seeChosenDescription,
+    .seeChosenTextElement,
+    .seeChosenTextBlock {
+        width: 100%;
+    }
+    
+}
+
+@media (max-width:700px) {
+    .seeChosenClothImage {
+        height: 340px;
+        }
+    .seeChosenTitleHeader {
+        font-size: 1.1rem;
+    }
+    .seeChosenHeader {
+        font-size: 0.7rem;
+    }
+    .seeChosenButton,
+    .shoppingCardLink {
+        font-size: 0.75rem;
+    }
+    .seeChosenSizeSpan {
+        height: 26px;
+        width: 32px;
+    }
+    
+    
+}
+@media (max-width:640px) {
+    .seeChosenClothImage {
+        height: 320px;
+        }
+    
+}
+@media (max-width:590px) {
+    .seeChosenClothSection {
+        padding: 6rem 3rem;
+        
+    }
+}
+
+@media (max-width:530px) {
+    .seeChosenClothImage {
+        height: 280px;
+        }
+    .seeChosenTextElement,
+    .seeChosenQualitySpan {
+        font-size: 0.88rem;
+    }
+    
+
+}
+
+@media (max-width:486px) {
+    .seeChosenClothImage {
+        height: 260px;
+    }
+}
+
+@media (max-width:440px) {
+    .seeChosenClothImage {
+        height: 240px;
+    }
+}
+
+@media (max-width:400px) {
+    .seeChosenClothImage {
+        height: 210px;
+    }
+    .seeChosenButton,
+    .shoppingCardLink {
+        padding: 0.2rem 1.1rem;
+    }
+    .seeChosenButtonBlock {
+        width: 250px;
+    }
+}
+
+@media (max-width:373px) {
+    .seeChosenClothImage {
+        height: 200px;
+    }
+    .seeChosenClothSection {
+        padding: 6rem 1.5rem;
+        
+    }
+   .seeChosenTextElement{
+       width: 290px;
+   }
+
+}
+
+@media (max-width:333px) {
+   .seeChosenTextElement{
+       width: 260px;
+   }
+
+}
+
+
