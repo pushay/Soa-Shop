@@ -18,11 +18,11 @@ function HamburgerMenu() {
                 </div>
                 <div style={{display: showHamburgerMenu ? 'block' : 'none'}} className={styles.hamburgerMenuBackground}>
                     <ul className={styles.hamburgerMenuList}>
-                        <Link  onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/'>Home</Link>
-                        <Link  onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/choose-clothes/women-collection'>Women</Link>
-                        <Link  onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/choose-clothes/men-collection'>Men</Link>
-                        <Link  onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/'>Campaign</Link>
-                        <Link  onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/shopping-cart'>Shopping Bag</Link>
+                        <Link onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/'>Home</Link>
+                        <Link onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/choose-clothes/women-collection'>Women</Link>
+                        <Link onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/choose-clothes/men-collection'>Men</Link>
+                        <Link onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/'>Campaign</Link>
+                        <Link onClick={()=> setShowHamburgerMenu(false)} className={styles.link} to='/shopping-cart'>Shopping Bag</Link>
                     </ul>
                 </div>
             </div>
