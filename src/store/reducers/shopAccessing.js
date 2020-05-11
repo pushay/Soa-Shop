@@ -33,6 +33,12 @@ const shopAccessingReducer = (state= initialState, action) => {
                 ...state,
                 list:shoppingList
             }
+        case actionTypes.STORE_STATE:
+            console.log(action)
+            return {
+                ...state,
+                list:action.stateProd
+            }
         default: 
             return state
     }

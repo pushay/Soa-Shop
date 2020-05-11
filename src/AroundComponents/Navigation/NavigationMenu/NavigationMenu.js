@@ -39,7 +39,6 @@ function NavigationMenu() {
                     <li className={styles.linkBlack}>
                         <Link className={styles.link} to="/">Campaign</Link>
                     </li>
-                    
                 </ul>
            </div>
            <div className={styles.navigationMenuLogo}>

@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import styles from './ShoppingCard.module.css';
 import { connect } from 'react-redux';
 import text from '../ChooseClothes/chooseClothesListOfClothesText'
+import { Link } from "react-router-dom";
+import * as actionTypes from '../store/actions'
 
 
 function ShoppingCard(props) {
@@ -9,7 +11,7 @@ function ShoppingCard(props) {
      const [Products, setProducts] = useState([]);
      const [Subtotal, setSubtotal] = useState(0);
 
-    useEffect( ()=> {
+    useEffect(()=> {
         setProducts(props.imageIdShop)
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
@@ -17,7 +19,7 @@ function ShoppingCard(props) {
     const RemoveProductHandler = (index, quantity) => {
         let list = []
         list = [...Products]
-        if (quantity.length > 1) {
+        if (quantity > 1) {
             list[index].quantity = quantity - 1;
         } else if (quantity === 1) {
              list.splice(index, 1)
@@ -28,10 +30,12 @@ function ShoppingCard(props) {
     useEffect(()=> {
         let sum = 0;
         // eslint-disable-next-line array-callback-return
-        Products.map( prod => {
-            sum = prod.price + sum
-        } )
+        Products.map(prod => {
+            console.log(prod.price)
+            sum = sum + (prod.price * prod.quantity)
+        })
         setSubtotal(sum)
+        props.onStoreState(Products)
     },[Products])
 
     return (
@@ -39,7 +43,7 @@ function ShoppingCard(props) {
             <div className={styles.shoppingCardInside}>
                 {Products.length > 0 ?
                     <div className={styles.shoppingCardList}>
-                        {props.imageIdShop.map((element, index) => (
+                        {Products.map((element, index) => (
                              <div key={index} className={styles.shoppingCardListItem}>
                                 <img className={styles.shoppingCardImage} src={text.AllClothes[element.id].img} alt='' />
                                 <div className={styles.shoppingCardBlock}>
@@ -82,7 +86,9 @@ function ShoppingCard(props) {
                     <p className={styles.shoppingCardText}>{Subtotal}$</p>
                 </div>
                 <div className={styles.shoppingCardCheckoutButtons}>
-                    <button className={styles.shoppingCardButton}>Go back</button>
+                    <Link to='/chosenCloth'>
+                        <button className={styles.shoppingCardButton}>Go back</button>
+                    </Link>
                     <button className={styles.shoppingCardButton}>
                         Checkout
                     </button>
@@ -98,5 +104,13 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps) (ShoppingCard)
+const mapDispatchToProps = dispatch => {
+    return {
+   onStoreState:(Products) => dispatch({
+    type:actionTypes.STORE_STATE,
+    stateProd:Products
+}),
+}}
+
+export default connect(mapStateToProps,  mapDispatchToProps) (ShoppingCard)
 
