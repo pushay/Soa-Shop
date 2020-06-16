@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Soa-Shop/static/css/main.10b4c2ac.chunk.css",
-    "main.js": "/Soa-Shop/static/js/main.e81ba6be.chunk.js",
-    "main.js.map": "/Soa-Shop/static/js/main.e81ba6be.chunk.js.map",
+    "main.js": "/Soa-Shop/static/js/main.b69981d1.chunk.js",
+    "main.js.map": "/Soa-Shop/static/js/main.b69981d1.chunk.js.map",
     "runtime-main.js": "/Soa-Shop/static/js/runtime-main.4099aa0e.js",
     "runtime-main.js.map": "/Soa-Shop/static/js/runtime-main.4099aa0e.js.map",
     "static/js/2.5b1691c7.chunk.js": "/Soa-Shop/static/js/2.5b1691c7.chunk.js",
     "static/js/2.5b1691c7.chunk.js.map": "/Soa-Shop/static/js/2.5b1691c7.chunk.js.map",
     "index.html": "/Soa-Shop/index.html",
-    "precache-manifest.cd1712816637634670f43bb3628d9787.js": "/Soa-Shop/precache-manifest.cd1712816637634670f43bb3628d9787.js",
+    "precache-manifest.6a2562a4468dc503cdfed3dd8c6094e6.js": "/Soa-Shop/precache-manifest.6a2562a4468dc503cdfed3dd8c6094e6.js",
     "service-worker.js": "/Soa-Shop/service-worker.js",
     "static/css/main.10b4c2ac.chunk.css.map": "/Soa-Shop/static/css/main.10b4c2ac.chunk.css.map",
     "static/js/2.5b1691c7.chunk.js.LICENSE.txt": "/Soa-Shop/static/js/2.5b1691c7.chunk.js.LICENSE.txt",
@@ -33,6 +33,6 @@
     "static/js/runtime-main.4099aa0e.js",
     "static/js/2.5b1691c7.chunk.js",
     "static/css/main.10b4c2ac.chunk.css",
-    "static/js/main.e81ba6be.chunk.js"
+    "static/js/main.b69981d1.chunk.js"
   ]
 }
