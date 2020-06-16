@@ -9,16 +9,16 @@ function NavigationBottom() {
                 <div className={styles.navigationBottomInformation}>
                     <h1 className={styles.navigationBottomHeader}>More information</h1>
                     <li className={styles.navigationBottomLink}>
-                        <Link className={styles.link} to="/">Contact us</Link>
+                        <Link className={styles.link} to="/Soa-Shop">Contact us</Link>
                     </li>
                     <li className={styles.navigationBottomLink}>
-                        <Link className={styles.link} to="/">Find a store</Link>
+                        <Link className={styles.link} to="/Soa-Shop">Find a store</Link>
                     </li>
                     <li className={styles.navigationBottomLink}>
-                        <Link className={styles.link} to="/">Delivery&Returns</Link>
+                        <Link className={styles.link} to="/Soa-Shop">Delivery&Returns</Link>
                     </li>
                     <li className={styles.navigationBottomLink}>
-                        <Link className={styles.link} to="/">Privacy Policy</Link>
+                        <Link className={styles.link} to="/Soa-Shop">Privacy Policy</Link>
                     </li>
                 </div>
                 <div className={styles.navigationBottomAbout}>
@@ -27,7 +27,7 @@ function NavigationBottom() {
                         <Link className={styles.link} to="/choose-clothes/bestsellers">Bestsellers</Link>
                     </li>
                     <li className={styles.navigationBottomLink}>
-                        <Link className={styles.link} to="/">Campaign</Link>
+                        <Link className={styles.link} to="/Soa-Shop">Campaign</Link>
                     </li>
                 </div>
             </div>

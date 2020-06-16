@@ -3,7 +3,7 @@ export default {
         header: 'Born out of love for unknown',
         paragraph:`It's almost our 20th anniversary when we stepped out our game. We left boring concepts and usual routines and striked for something we had never tried before. Here you will find true originiality cross the love for fashion and beauty. You will make you feel you true you and on the same comfortable mixing with danger. Awesomeness will be detectable from the air.`,
         linkText:'Learn more',
-        link:"/"
+        link:"/Soa-Shop"
     },
     
     sectionBestselllers: {

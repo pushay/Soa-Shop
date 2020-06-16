@@ -13,7 +13,7 @@ import ShoppingCard from './ShoppingCard/ShoppingCard'
 function Routing() {
     return (
             <Switch>
-                <Route exact path="/" >
+                <Route exact path="/Soa-Shop" >
                     <HomePage />
                 </Route>
                 <Route exact path="/choose-clothes" >
