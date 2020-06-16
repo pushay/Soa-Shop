@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/Soa-Shop/static/css/main.10b4c2ac.chunk.css",
+    "main.js": "/Soa-Shop/static/js/main.e81ba6be.chunk.js",
+    "main.js.map": "/Soa-Shop/static/js/main.e81ba6be.chunk.js.map",
+    "runtime-main.js": "/Soa-Shop/static/js/runtime-main.4099aa0e.js",
+    "runtime-main.js.map": "/Soa-Shop/static/js/runtime-main.4099aa0e.js.map",
+    "static/js/2.5b1691c7.chunk.js": "/Soa-Shop/static/js/2.5b1691c7.chunk.js",
+    "static/js/2.5b1691c7.chunk.js.map": "/Soa-Shop/static/js/2.5b1691c7.chunk.js.map",
+    "index.html": "/Soa-Shop/index.html",
+    "precache-manifest.cd1712816637634670f43bb3628d9787.js": "/Soa-Shop/precache-manifest.cd1712816637634670f43bb3628d9787.js",
+    "service-worker.js": "/Soa-Shop/service-worker.js",
+    "static/css/main.10b4c2ac.chunk.css.map": "/Soa-Shop/static/css/main.10b4c2ac.chunk.css.map",
+    "static/js/2.5b1691c7.chunk.js.LICENSE.txt": "/Soa-Shop/static/js/2.5b1691c7.chunk.js.LICENSE.txt",
+    "static/media/cloth1.jpg": "/Soa-Shop/static/media/cloth1.7c2fb101.jpg",
+    "static/media/cloth10.jpg": "/Soa-Shop/static/media/cloth10.6b5af16e.jpg",
+    "static/media/cloth11.jpg": "/Soa-Shop/static/media/cloth11.4e2742bc.jpg",
+    "static/media/cloth12.jpg": "/Soa-Shop/static/media/cloth12.5ba87e0c.jpg",
+    "static/media/cloth13.jpg": "/Soa-Shop/static/media/cloth13.f1e7b069.jpg",
+    "static/media/cloth14.jpg": "/Soa-Shop/static/media/cloth14.44bb7994.jpg",
+    "static/media/cloth2.jpg": "/Soa-Shop/static/media/cloth2.36237173.jpg",
+    "static/media/cloth3.jpg": "/Soa-Shop/static/media/cloth3.5245c72e.jpg",
+    "static/media/cloth4.jpg": "/Soa-Shop/static/media/cloth4.3bc4dfd7.jpg",
+    "static/media/cloth5.jpg": "/Soa-Shop/static/media/cloth5.f3a98e58.jpg",
+    "static/media/cloth6.jpg": "/Soa-Shop/static/media/cloth6.91edd071.jpg",
+    "static/media/cloth7.jpg": "/Soa-Shop/static/media/cloth7.05cdc662.jpg",
+    "static/media/cloth8.jpg": "/Soa-Shop/static/media/cloth8.dcc4dcaa.jpg",
+    "static/media/cloth9.jpg": "/Soa-Shop/static/media/cloth9.7b2eef6b.jpg",
+    "static/media/joshua.jpg": "/Soa-Shop/static/media/joshua.7f8afd68.jpg",
+    "static/media/shopping.jpg": "/Soa-Shop/static/media/shopping.66d57a1b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4099aa0e.js",
+    "static/js/2.5b1691c7.chunk.js",
+    "static/css/main.10b4c2ac.chunk.css",
+    "static/js/main.e81ba6be.chunk.js"
+  ]
+}
