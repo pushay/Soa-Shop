@@ -1,0 +1,351 @@
+.navigationMenu {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 2.7rem;
+    left: 0;
+    right: 0;
+    transition: 0.10s ease-in ;
+    -webkit-transition: 0.10s ease-in ;
+    -moz-transition: 0.10s ease-in ;
+    -ms-transition: 0.10s ease-in ;
+    -o-transition: 0.10s ease-in ;
+    padding:0.5rem 3rem 0.5rem 3rem;
+    z-index: 100000;
+    width: 100%vh;
+}
+/* STYLES FOR NAVIGATION PRIMARY */
+.navigationMenuPrimary {
+    color: black;
+    font-weight: bold;
+    display: flex;
+    width: 400px;
+    align-items: center;
+}
+ 
+.navigationMenuPrimaryList {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.linkBlack{
+    list-style: none; 
+}
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.linkBlack::after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px #0c0d0e;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-in-out;
+    -webkit-transition: transform 0.4s ease-in-out;
+    -moz-transition: transform 0.4s ease-in-out;
+    -ms-transition: transform 0.4s ease-in-out;
+    -o-transition: transform 0.4s ease-in-out;
+}
+
+.linkBlack:hover::after {
+    transform: scaleX(1);
+}
+
+/* STYLES NAVIGATIONMENU LOGO */
+.navigationMenuLogo {
+    margin-left: 3rem;
+    width: 1800px;
+    display: flex;
+    width: 1600px;
+    justify-content: center;
+}   
+
+.navigationMenuLogoHeader {
+    font-size: 3rem;
+}
+
+.navigationMenuList__element{
+    list-style: none;
+    color: black;
+    margin-top:0.5rem;
+}
+
+.navigationMenuList__link {
+    color: white;
+    text-decoration: none;
+}
+
+.navigationMenuList__header {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+ /* STYLES NAVIGATION SECONDARY  */
+.navigationMenuSecondary  {
+    width: 28%;
+    display: flex;
+    justify-content: flex-end
+}
+
+.navigationMenuSecondaryList {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+}
+
+.navigationBottomList {
+    display: flex;
+    flex-direction: column;
+}
+
+.hamburgerMenu{
+    display: none;
+}
+
+.hamburgerMenuIcon {
+    z-index: 1000000;
+    position: absolute;
+    top:31%;
+    right:4%;
+    fill:'#black'
+}
+
+.hamburgerMenuIconWhite {
+    z-index: 1000000;
+    position: absolute;
+    top:31%;
+    right:4%;
+    fill:'#fff'
+}
+
+.hamburgerMenuBackground{
+    z-index: 100000;
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(36, 33, 33);
+}
+
+.hamburgerMenuList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    flex-direction: column;
+}
+
+.link2 {
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    
+}
+
+.link2::after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px #f1f3f5;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out;
+    -ms-transition: transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+}
+
+.link2:hover::after {
+    transform: scaleX(1);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width:673px) {   
+    .hamburgerMenu{
+        display: block
+    }
+}
+
+@media (max-width:470px) {   
+    .hamburgerMenuIcon {
+        width: 20px;
+        height: 20px;
+    }
+    .link2 {
+        font-size: 4rem;
+    }
+}
+
+/* MEDIA QUERIES */
+@media(max-width:1760px) { 
+    .navigationMenuSecondaryList {
+        width: 28%;
+
+}
+.navigationMenuLogoHeader {
+    font-size: 2.7rem;
+}
+}
+@media (max-width:1630px) {
+    .navigationMenuSecondaryList {
+        width: 33%;
+}
+    .svgHome,
+    .svgShoppingCard {
+        width: 30px;
+    }
+    
+}
+
+@media (max-width:1520px) {
+    
+    .navigationMenuSecondary  {
+        width: 35%;
+        
+    }
+}
+@media (max-width:1400px) {   
+    .navigationMenuLogoHeader {
+        font-size: 2.4rem;
+    }
+    .navigationMenuSecondary  {
+        width: 45%;
+        
+    }
+    .navigationMenuList__header {
+        font-size: 1.4rem;
+    }
+    
+}
+@media (max-width:1323px) {   
+    .navigationMenuSecondary  {
+        width: 55%;
+        
+    }
+    
+}
+
+@media (max-width:1182px) {   
+    .navigationMenuPrimary {
+        width: 330px;
+    }
+    .navigationMenuSecondary  {
+        width: 75%;
+        
+    }
+    
+}
+
+@media (max-width:1178px) {   
+    .navigationMenuSecondary  {
+        width: 60%;
+        
+    }
+    .navigationMenu {
+        padding:0.5rem 1.5rem 0.5rem 1.5rem;
+    }
+    .svgHome,
+    .svgShoppingCard {
+        width: 26px;
+    }
+}
+@media (max-width:1100px) {   
+    .navigationMenuSecondary  {
+        width: 75%;   
+    }
+    .navigationBottomList {
+        margin-bottom: 2rem;
+    }
+    .navigationMenuList__header {
+        margin-bottom: 0.5rem;
+    }
+    .navigationMenuList__link {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+@media (max-width:1030px) {   
+    
+}
+
+@media (max-width:1100px) {   
+    .navigationMenuSecondary  {
+        width: 90%;
+        
+    }
+}
+
+
+@media (max-width:941px) {   
+    .navigationMenuPrimary {
+        width: 1100px;
+    }
+
+
+    .navigationMenuLogo {
+        margin-left:1rem;
+        width: 900px;
+    }
+
+    .navigationMenuLogoHeader {
+        font-size: 2.1rem;
+    }
+    .link {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width:814px) {   
+    .navigationMenuPrimary {
+        width: 1600px;
+    }
+
+    .navigationMenuLogo {
+        margin-left:1rem;
+        width: 600px;
+    }
+
+    .navigationMenuLogoHeader {
+        font-size: 1.8rem;
+    }
+    .link {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width:673px) {   
+    .navigationMenuPrimary {
+        display: none;  
+    }
+    .navigationMenuSecondary {
+        display: none;
+    }
+
+}
+
+@media (max-width:470px) {  
+    .navigationMenu {
+        padding: 0rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .navigationMenuLogo {
+        margin-left: 0rem;
+        width: 200px;
+    }
+    .link2 {
+        font-size: 1.4rem;
+    }
+
+}

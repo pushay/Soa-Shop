@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './ClothesShopCardPopUp.module.css'
 import { connect } from 'react-redux';
 import text from '../chooseClothesListOfClothesText'
-
-
+import ShoppingCardInformation from '../../ShoppingCard/ShoppingCardInformation/ShoppingCardInformation';
 
 function ClothesShopCard(props){
 
@@ -15,22 +14,10 @@ function ClothesShopCard(props){
                         <img src={text.AllClothes[thing.id].img} alt='' className={styles.clothesShopCardPopUpImage}/>
                         <div className={styles.clothesShopCardPopUpTextArea}>
                             <h1 className={styles.clothesShopCardPopUpHeader}>{text.AllClothes[thing.id].name}</h1>
-                                <div className={styles.clothesShopCardPopUpLittleBlock}>
-                                    <p className={styles.clothesShopCardPopUpText}>Price:  </p>
-                                    <p className={styles.clothesShopCardPopUpText}>{text.AllClothes[thing.id].price}$</p>
-                                </div>
-                                <div className={styles.clothesShopCardPopUpLittleBlock}>
-                                    <p className={styles.clothesShopCardPopUpText}>Size:  </p>
-                                    <p className={styles.clothesShopCardPopUpText}>{thing.size}</p>
-                                </div>
-                                <div className={styles.clothesShopCardPopUpLittleBlock}>
-                                    <p className={styles.clothesShopCardPopUpText}>Quality:  </p>
-                                    <p className={styles.clothesShopCardPopUpText}>{thing.quality}</p>
-                                </div>
-                                <div className={styles.clothesShopCardPopUpLittleBlock}>
-                                    <p className={styles.clothesShopCardPopUpText}>Quantity:  </p>
-                                    <p className={styles.clothesShopCardPopUpText}>{thing.quantity}</p>
-                                </div> 
+                                <ShoppingCardInformation classDiv={styles.clothesShopCardPopUpLittleBlock} classMain={styles.clothesShopCardPopUpText} classText={styles.clothesShopCardPopUpText} main='Price: ' text={text.AllClothes[thing.id].price}  />
+                                <ShoppingCardInformation classDiv={styles.clothesShopCardPopUpLittleBlock} classMain={styles.clothesShopCardPopUpText} classText={styles.clothesShopCardPopUpText} main='Size: ' text={thing.size}  />
+                                <ShoppingCardInformation classDiv={styles.clothesShopCardPopUpLittleBlock} classMain={styles.clothesShopCardPopUpText} classText={styles.clothesShopCardPopUpText} main='Quality: ' text={thing.quality}  />
+                                <ShoppingCardInformation classDiv={styles.clothesShopCardPopUpLittleBlock} classMain={styles.clothesShopCardPopUpText} classText={styles.clothesShopCardPopUpText} main='Quantity: ' text={thing.quantity}  />
                         </div>    
                     </div>    
                 ))}

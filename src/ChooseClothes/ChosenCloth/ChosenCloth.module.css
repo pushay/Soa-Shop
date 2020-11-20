@@ -62,7 +62,6 @@
 .seeChosenQualityBlock {
     display: flex;
     justify-content: space-between;
-    width: 250px;
     margin-bottom: 1rem;
 }
 
@@ -84,6 +83,12 @@
 
 .seeChosenQualitySpan:hover::after {
     transform: scaleX(1);
+}
+
+.seeChosenQualityBlock {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 /* TEXT PART */

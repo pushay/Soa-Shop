@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import styles from './ShoppingCard.module.css';
 import { connect } from 'react-redux';
-import text from '../ChooseClothes/chooseClothesListOfClothesText'
-import { Link } from "react-router-dom";
 import * as actionTypes from '../store/actions'
+import ShoppingCardInformation from './ShoppingCardInformation/ShoppingCardInformation';
+import ShoppingCardCheckout from './ShoppingCardCheckout/ShoppingCardCheckout';
+import ShoppingCardItem from './ShoppingCardItem/ShoppingCardItem';
 
 
 function ShoppingCard(props) {
@@ -44,56 +45,15 @@ function ShoppingCard(props) {
                 {Products.length > 0 ?
                     <div className={styles.shoppingCardList}>
                         {Products.map((element, index) => (
-                             <div key={index} className={styles.shoppingCardListItem}>
-                                <img className={styles.shoppingCardImage} src={text.AllClothes[element.id].img} alt='' />
-                                <div className={styles.shoppingCardBlock}>
-                                    <h1 className={styles.shoppingCardHeader}>{text.AllClothes[element.id].name}</h1>
-                                    <div className={styles.shoppingCardSortBlock}>
-                                        <p className={styles.shoppingCardListText}>Price: </p>
-                                        <p className={styles.shoppingCardListText}>{text.AllClothes[element.id].price} $</p>
-                                    </div>
-                                    <div className={styles.shoppingCardSortBlock}>
-                                        <p  className={styles.shoppingCardListText}>Size: </p>
-                                        <p className={styles.shoppingCardListText}>{element.size}</p>
-                                    </div>
-                                    <div className={styles.shoppingCardSortBlock}>
-                                        <p className={styles.shoppingCardListText}>Quality: </p>
-                                        <p className={styles.shoppingCardListText}>{element.quality}</p>
-                                    </div>
-                                    <div className={styles.shoppingCardSortBlock}>
-                                        <p className={styles.shoppingCardListText}>Quantity:</p>
-                                        <p className={styles.shoppingCardListText}>{element.quantity}</p>
-                                    </div>
-                                    <div onClick={() => RemoveProductHandler(index, element.quantity)} className={styles.shoppingCardButtonRemoveBlock}>
-                                        <span className={styles.shoppingCardRemoveSpan} style={{fontSize:'30px'}}>&#8864;</span>
-                                    </div>     
-                                </div>  
-                            </div>   
+                            <ShoppingCardItem RemoveProductHandler={RemoveProductHandler}  element={element} index={index} /> 
                         ))}
                           
                     </div>
                 :
-                    <div className={styles.shoppingCardBlockAlert}>
-                        <h1 className={styles.shoppingCardAlertHeader}>YOUR SHOPPING BAG IS EMPTY!</h1>
-                        <p className={styles.shoppingCardAlertText}>Please add items to your bag or log in to access them</p>
-                    </div>
+                    <ShoppingCardInformation classDiv={styles.shoppingCardBlockAlert} classMain={styles.shoppingCardAlertHeader} classText={styles.shoppingCardAlertText} main='YOUR SHOPPING BAG IS EMPTY!' text='Please add items to your bag' />
                 }
             </div>
-            <div className={styles.shoppingCardCheckout}>
-                <h1 className={styles.shoppingCardAlertHeader}>ORDER SUMMARY</h1>
-                <div className={styles.shoppingCardCheckoutTotal}>
-                    <p className={styles.shoppingCardText}>SUBTOTAL</p>
-                    <p className={styles.shoppingCardText}>{Subtotal}$</p>
-                </div>
-                <div className={styles.shoppingCardCheckoutButtons}>
-                    <Link to='/chosenCloth'>
-                        <button className={styles.shoppingCardButton}>Go back</button>
-                    </Link>
-                    <button className={styles.shoppingCardButton}>
-                        Checkout
-                    </button>
-                </div>
-            </div>
+            <ShoppingCardCheckout Subtotal={Subtotal}/>
         </div>
     )
 }

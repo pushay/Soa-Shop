@@ -46,7 +46,7 @@
     -moz-transition: transform 0.3s ease-in-out;
     -ms-transition: transform 0.3s ease-in-out;
     -o-transition: transform 0.3s ease-in-out;
-}
+} 
 
 .chooseClothesItem:hover::after {
     transform: scaleX(1);

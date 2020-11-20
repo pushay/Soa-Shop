@@ -13,6 +13,7 @@
     padding:0.5rem 3rem 0.5rem 3rem;
     z-index: 100000;
     width: 100%vh;
+    justify-content: space-between;
     
 }
 /* STYLES FOR NAVIGATION PRIMARY */
@@ -20,16 +21,22 @@
     color: black;
     font-weight: bold;
     display: flex;
-    width: 450px;
+    width: 350px;
 }
  
 .navigationMenuPrimaryList {
     display: flex;
     height: 100%;
     width: 100%;
-    justify-content: space-between;
 
 }
+
+.navigationBottomInformation {
+    display: flex;
+    width: 1500px;
+    justify-content: space-between;
+}
+
 
 .linkBlack{
     list-style: none; 
@@ -57,10 +64,10 @@
 
 /* STYLES NAVIGATIONMENU LOGO */
 .navigationMenuLogo {
-    margin-left: 3rem;
     width: 1800px;
     display: flex;
-    width: 1600px;
+    width: 300px;
+    padding-right: 10rem;
     justify-content: center;
 }   
 
@@ -167,6 +174,10 @@
         width: 75%;
         
     }
+    .navigationBottomInformation {
+        flex-direction: column;
+    }
+
 }
 
 
@@ -186,18 +197,15 @@
 
 
 @media (max-width:941px) {   
-    .navigationMenuPrimary {
-        width: 900px;
-    }
-
+    
     .navigationMenuLogo {
-        margin-left:1rem;
         width: 900px;
     }
 
     .navigationMenuLogoHeader {
         font-size: 2.1rem;
     }
+
     .link {
         font-size: 0.9rem;
     }
@@ -205,12 +213,13 @@
 
 @media (max-width:814px) {   
     .navigationMenuPrimary {
-        width: 700px;
+        width: 1000px;
     }
 
     .navigationMenuLogo {
         margin-left:1rem;
-        width: 600px;
+        /* width: 750px; */
+        padding-right: 7rem;
     }
 
     .navigationMenuLogoHeader {
@@ -218,6 +227,12 @@
     }
     .link {
         font-size: 0.9rem;
+    }
+}
+
+@media(max-width:715px){
+    .navigationMenuLogo {
+        padding-right: 4.5rem;
     }
 }
 

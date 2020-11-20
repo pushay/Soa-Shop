@@ -1,12 +1,10 @@
 import React, { useEffect,useState} from 'react';
 import styles from './ChooseClothes.module.css';
-import { Link } from "react-router-dom";
 import ChooseClothesDropdown from './ChooseClothesDropdown/ChooseClothesDropdown';
 import text from './chooseClothesListOfClothesText';
 import {withRouter} from 'react-router-dom';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import * as actionTypes from '../store/actions'
+import NavigationMenuList from '../Components/Navigation/NavigationMenu/NavigationMenuList/NavigationMenuList';
+import ChooseClothesSingleCloth from './ChooseClothesSingleCloth/ChooseClothesSingleCloth';
 
 
 let clothesWithDiscription = text.AllClothes
@@ -25,35 +23,10 @@ function ChooseClothes(props) {
         <div className={styles.chooseClothes}>
             <div className={styles.chooseClothesSidebar}>
                 <div className={styles.chooseClothesOffers}>
-                    <h1 className={styles.chooseClothesHeader}>Arrivals</h1>
-                    <div className={styles.chooseClothesLinksBlock}>
-                        <li className={styles.chooseClothesItem}>
-                            <Link className={styles.link} to="/choose-clothes/women-collection">Women</Link>
-                        </li>
-                        <li className={styles.chooseClothesItem}>
-                            <Link className={styles.link} to="/choose-clothes/men-collection">Men</Link>
-                        </li>
-                        <li className={styles.chooseClothesItem}>
-                            <Link className={styles.link} to="/choose-clothes/bestsellers">Bestsellers</Link>
-                        </li>
-                        <li className={styles.chooseClothesItem}>
-                            <Link className={styles.link} to="/choose-clothes/good-price">Good price</Link>
-                        </li>
-                    </div>
+                    <NavigationMenuList with='Arrivals' styled='chooseClothes' navigation='NavigationChooseClothes1' />
                 </div>
                 <div className={styles.chooseClothesByProduct}>
-                    <h1 className={styles.chooseClothesHeader} >Shop by Product</h1>
-                    <div className={styles.chooseClothesLinksBlock}>
-                        <li className={styles.chooseClothesItem}>
-                            <Link className={styles.link} to="/choose-clothes/t-shirt">T-shirt</Link>
-                        </li>
-                        <li className={styles.chooseClothesItem}>
-                            <Link className={styles.link} to="/choose-clothes/jumpsuit">Jumpsuit</Link>
-                        </li>
-                        <li className={styles.chooseClothesItem}>
-                            <Link className={styles.link} to="/choose-clothes/hoodie">Hoodie</Link>
-                        </li>
-                    </div>
+                   <NavigationMenuList with='Shop by Product' styled='chooseClothes' navigation='NavigationChooseClothes2' />
                 </div>
                 <div className={styles.chooseClothesSortBlock}>
                     <h1 className={styles.chooseClothesHeader} >Filters and Sorts</h1>
@@ -81,21 +54,8 @@ function ChooseClothes(props) {
                     else return false
                 }).map((image,index) => {
                     return (
-                        <div className={styles.chooseSingleClothBlock}>
-                            <div className={styles.chooseSingleClothImageBlock}>
-                                <img src={image.img} alt={image.img} key={index} id={image.id} className={styles.chooseSingleClothImage} />
-                                <div className={styles.chooseSingleClothLinkBlock}>
-                                    <Link to='/chosenCloth' onClick={()=> props.onStoreId(image.id)} className={styles.chooseSingleClothLinkImage}>QUICK SHOP</Link>
-                                </div>
-                            </div>
-                            <div className={styles.chooseSingleClothDescription}>
-                                <div className={styles.chooseSingleClothMessage}>
-                                    <Link  className={styles.chooseSingleClothLink}>
-                                        <p to='/chosenCloth' className={styles.chooseSingleClothName}>{image.name}</p>
-                                    </Link>
-                                    <p className={styles.chooseSingleClothPrice}>{image.price}$</p>
-                                </div>   
-                            </div>    
+                        <div key={index} className={styles.chooseSingleClothBlock}>
+                            <ChooseClothesSingleCloth image={image} />
                         </div>
                     )
                 })}
@@ -105,21 +65,4 @@ function ChooseClothes(props) {
     )
 }
 
- const mapStateToProps = state => {
-    return {
-        imageId:state.img.imageId
-    }
-}
-
-const mapDispatchToProps= dispatch => {
-    return {
-        onStoreId: (id) => dispatch({
-            type:actionTypes.STORE_ID,
-            imageId: id
-        })
-    }
-}
-
-export default compose(
-    withRouter, connect(mapStateToProps, mapDispatchToProps)
-)(ChooseClothes)
+export default withRouter(ChooseClothes)

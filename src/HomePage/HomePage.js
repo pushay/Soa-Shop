@@ -1,8 +1,8 @@
 import React from 'react';
 import Auxiliary from '../HOC/Auxiliary';
-import ImageSlider from '../AroundComponents/ImageSlider/ImageSlider'
-import Section from '../AroundComponents/Section/Section'
-import SectionCloth from '../AroundComponents/SectionCloth/SectionCloth';
+import ImageSlider from '../Components/ImageSlider/ImageSlider'
+import Section from '../Components/Section/Section'
+import SectionCloth from '../Components/SectionCloth/SectionCloth';
 
 
 

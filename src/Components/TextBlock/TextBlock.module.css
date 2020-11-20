@@ -1,0 +1,271 @@
+
+.carouselContainer {
+    width: 100%;
+    height: 1150px;
+    position: relative;
+}
+
+.carouselSlide {
+    background: linear-gradient(to left, rgba(7, 7, 7, 0) 50%,
+              rgb(0, 0, 0) 100%), url(../../Images/joshua.jpg);
+    background-position: cover;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    height: 100%;
+}
+
+/* later background-position:center */
+
+/* STYLES FOR IMAGE SLIDER MESSAGES */
+.carouselMessage {
+    position: absolute;
+    top:40%;
+    left:10%;
+    color: white;
+    z-index: 10000;
+}
+
+.carouselMessageHeader {
+    font-size: 3rem;
+    margin-bottom:1rem;
+}
+.carouselMessageText {
+    font-size: 1.5rem;
+    width: 400px;  
+}
+/* IMPORTED NAVLINK */
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+@media (max-width:1800px) {
+    .carouselMessageHeader {
+        font-size: 2.6rem;
+    }
+    .carouselMessageText {
+        font-size: 1.3rem;
+    }
+    .carouselContainer {
+        width: 100%;
+        height: 920px;
+    }
+    
+}
+
+@media (max-width:1700px) {
+    .carouselMessageHeader {
+        font-size: 2.3rem;
+    }
+    .carouselMessageText {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width:1027px) {
+    .carouselMessageText {
+        font-size: 1rem;
+    }
+.carouselSlide {
+    background-position: center;
+    }
+.carouselMessage {
+    top:50%;
+    left:10%;
+    }
+    .carouselContainer {
+        height: 800px;
+        position: relative;
+    }
+    
+}
+
+@media (max-width:941px) {
+    .carouselMessageHeader {
+        font-size: 1.7rem;
+        margin-bottom: 0.3rem ;
+    }
+    .carouselMessageText {
+        font-size: 0.9rem;
+    }
+    
+    
+}
+
+@media (max-width:813px) {    
+.carouselContainer {
+    height: 700px;
+    position: relative;
+}
+}
+
+@media (max-width:673px) {
+    .carouselMessageHeader {
+        font-size: 1.5rem;
+        width: 300px;
+    }
+    .carouselMessageText {
+        font-size: 0.8rem;
+        width: 300px;
+    }
+}
+
+@media (max-width:673px) {
+    .carouselMessageHeader {
+        width: 300px;
+    }
+    .carouselMessageText {
+        font-size: 0.8rem;
+        width: 300px;
+    }
+}
+
+@media (max-width:436px) {
+    .carouselMessageHeader {
+        width: 200px;
+    }
+    .carouselMessageText {
+        font-size: 0.8rem;
+        width: 250px;
+    }
+}
+
+.sectionBlock {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.sectionBlockHeader {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.sectionBlockText {
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+/* IMPORTED NAVLINK */
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.linkBlack{
+    list-style: none;
+    font-weight: bold;
+}
+
+.linkBlack::after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px #0c0d0e;
+    transform: scaleX(0);
+    transition: transform 0.6s ease-in-out;
+    -webkit-transition: transform 0.6s ease-in-out;
+    -moz-transition: transform 0.6s ease-in-out;
+    -ms-transition: transform 0.6s ease-in-out;
+    -o-transition: transform 0.6s ease-in-out;
+}
+
+.linkBlack:hover::after {
+    transform: scaleX(1);
+}
+
+/* media queries */
+@media(max-width:1800px) {
+    .sectionBlockHeader {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+    }
+    .sectionBlockText {
+        font-size: 1rem;
+      }      
+}
+
+@media (max-width:1700px) {
+    .section {
+        padding: 3rem 20rem 2rem 20rem;
+    }
+    .sectionBlockText {
+        font-size: 0.95rem;
+      }   
+}
+
+@media (max-width:1410px) {
+    .section {
+        padding: 3rem 15rem 2rem 15rem;
+    }
+    .sectionBlockText {
+        font-size: 0.95rem;
+      }   
+}
+
+@media (max-width:1194px) {
+    .section {
+        padding: 3rem 10rem 2rem 10rem;
+    }
+    .sectionBlockText {
+        font-size: 0.95rem;
+      }   
+}
+@media (max-width:1194px) {
+    .section {
+        padding: 3rem 6rem 2rem 6rem;
+    }
+
+}
+@media(max-width:941px) {
+    .sectionBlockHeader {
+        font-size: 1.5rem;
+}
+    .sectionBlockText,
+    .link {
+        font-size: 0.9rem;
+      }
+       
+}
+
+@media(max-width:690px) {
+    .sectionBlockText,
+    .link {
+        font-size: 0.8rem;
+      }
+    .sectionBlockHeader {
+        font-size: 1.5rem;
+       
+    }
+    .section {
+        padding: 2rem;
+    }
+
+    
+}
+ 
+@media(max-width:551px) {
+    
+    .sectionBlockHeader {
+        font-size: 1.4rem;
+        margin:1rem 3rem
+    }
+}
+       
+ 
+@media(max-width:467px) {
+    
+    .sectionBlockHeader {
+        font-size: 1.3rem;
+        margin:1rem 1.5rem
+    }
+    .sectionBlockText,
+    .link {
+        font-size: 0.75rem;
+      }
+}
+
+       
+

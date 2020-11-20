@@ -2,21 +2,21 @@
     display: none;
 }
 
-/* .hamburgerMenuDiv {
-
-} */
-
-/* .hamburgerMenuIconContainer{
-
-} */
-
 .hamburgerMenuIcon {
     z-index: 1000000;
     position: absolute;
     top:31%;
     right:4%;
+    fill:'#black'
 }
 
+.hamburgerMenuIconWhite {
+    z-index: 1000000;
+    position: absolute;
+    top:31%;
+    right:4%;
+    fill:'#fff'
+}
 
 .hamburgerMenuBackground{
     z-index: 100000;
@@ -26,7 +26,6 @@
     height: 100%;
     width: 100%;
     background-color: rgb(36, 33, 33);
-
 }
 
 .hamburgerMenuList{
@@ -68,8 +67,6 @@
     .hamburgerMenu{
         display: block
     }
-    
-
 }
 
 @media (max-width:470px) {   

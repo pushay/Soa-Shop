@@ -4,10 +4,10 @@ import Auxiliary from '../../HOC/Auxiliary';
 import { connect } from 'react-redux';
 import {useState} from 'react'
 import text from '../chooseClothesListOfClothesText';
-import textSize from '../ChooseClothesDropdown/chooseClothesDropdownText';
 import * as actionTypes from '../../store/actions';
 import { Link } from "react-router-dom";
 import ClothesShopCard from '../ClothesShopCard/ClothesShopCardPopUp'
+import ChosenClothOptions from './ChosenClothOptions/ChosenClothOptions';
 
 
 function ChoosenCloth(props) {
@@ -55,6 +55,7 @@ function ChoosenCloth(props) {
         }, 6000)
     }
 
+
     return (
         <div className={styles.seeChosenClothSection}>
             <Auxiliary>
@@ -64,30 +65,8 @@ function ChoosenCloth(props) {
                             </div>
                             <div className={styles.seeChosenDescription}>
                                 <h1 className={styles.seeChosenTitleHeader}>{text.AllClothes[props.imageId].name}</h1>
-                                <div className={styles.seeChosenSizes}>
-                                    <h1 className={styles.seeChosenHeader}>SIZE:</h1>
-                                    <div className={styles.seeChosenSizeSpanBlock}>
-                                        {textSize.SortClothes['Choose size'].map( span => {
-                                            return (
-                                                <span key={span.value} onClick={() => SortSizeHandler(span)} style={{backgroundColor: sortSize === span ? 'rgb(26, 25, 25)' : 'white',
-                                                color: sortSize === span ? 'white' : 'black', borderColor : disabledSize ? '#E60000' : 'black'}} value={span.value} className={styles.seeChosenSizeSpan} >{span}</span>
-                                            )
-                                        })}
-                                    </div>
-                                </div>
-                                <div className={styles.seeChosenQuality}>
-                                    <h1 className={styles.seeChosenHeader}>
-                                        Quality:
-                                    </h1>
-                                    <div className={styles.seeChosenQualityBlock}>
-                                        {textSize.SortClothes['Choose quality'].map(( qualitySpan, index) => {
-                                            return (
-                                            <span key={index} onClick={() => SortQualityHandler(qualitySpan)} value={qualitySpan} style={{borderBottom: sortQuality === qualitySpan ? '1px solid black' : '',  color : disabledQuality ? '#E60000' : 'black' }} className={styles.seeChosenQualitySpan}>{qualitySpan}</span>
-                                            )
-                                        })
-                                        }
-                                    </div>
-                                </div>
+                                <ChosenClothOptions option='Choose size' header='SIZE: ' classDiv={styles.seeChosenSizeSpanBlock} disabledSize={disabledSize} classSpan={styles.seeChosenSizeSpan} sortSize={sortSize} sendValue={SortSizeHandler} />
+                                <ChosenClothOptions option='Choose quality' header='Quality: '                              classDiv={styles.seeChosenSizeSpanBlock} disabledQuality={disabledQuality} sortQuality={sortQuality} sendValue={SortQualityHandler} classSpan={styles.seeChosenQualitySpan} />
                                 <div className={styles.seeChosenTextBlock}>
                                         <h1 className={styles.seeChosenHeader}>
                                             Description
@@ -105,9 +84,7 @@ function ChoosenCloth(props) {
                                             props.onGetShoppIds(props.imageId, sortSize, sortQuality, text.AllClothes[props.imageId].price);
                                             ShowShopCardHandler()
                                         }}
-                                        className={styles.seeChosenButton}
-                                    >
-                                        Add to cart
+                                        className={styles.seeChosenButton}>Add to cart
                                     </button>
                                     <Link to={"/shopping-cart"} className={styles.shoppingCardLink}>
                                         Go to cart
