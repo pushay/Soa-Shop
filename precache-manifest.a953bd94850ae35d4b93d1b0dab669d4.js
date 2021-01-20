@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9854e564d1bbcbc2ac4ab224d7af6b76",
+    "revision": "9614077e1f575079ee5e0fc2fd34ce38",
     "url": "/Soa-Shop/index.html"
   },
   {
-    "revision": "43c6d995d58d967bd21a",
-    "url": "/Soa-Shop/static/css/main.2e87b38e.chunk.css"
+    "revision": "cd929f266d5071b31b7a",
+    "url": "/Soa-Shop/static/css/main.c5a5890c.chunk.css"
   },
   {
-    "revision": "ed5776ef13f68fe6c876",
-    "url": "/Soa-Shop/static/js/2.99c784d7.chunk.js"
+    "revision": "ae24573ccace13439b27",
+    "url": "/Soa-Shop/static/js/2.5d07b36f.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/Soa-Shop/static/js/2.99c784d7.chunk.js.LICENSE.txt"
+    "url": "/Soa-Shop/static/js/2.5d07b36f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "43c6d995d58d967bd21a",
-    "url": "/Soa-Shop/static/js/main.db8a54fa.chunk.js"
+    "revision": "cd929f266d5071b31b7a",
+    "url": "/Soa-Shop/static/js/main.1527ae70.chunk.js"
   },
   {
     "revision": "d412ee9f5cb2e54ca4d7",
