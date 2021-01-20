@@ -9,7 +9,6 @@ const shopAccessingReducer = (state= initialState, action) => {
         case actionTypes.GET_SHOPPCARD:
             let shoppingList = state.list
             let imageInfo = action.imageIdShop
-
             if (shoppingList.length === 0) {
                 imageInfo.quantity = 1
                 shoppingList.push(imageInfo)
@@ -28,13 +27,12 @@ const shopAccessingReducer = (state= initialState, action) => {
                     shoppingList.push(imageInfo)
                 }
             }
-
+            
             return {
                 ...state,
                 list:shoppingList
             }
         case actionTypes.STORE_STATE:
-            console.log(action)
             return {
                 ...state,
                 list:action.stateProd

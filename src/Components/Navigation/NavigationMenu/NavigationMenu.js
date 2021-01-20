@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import styles from './NavigationMenu.module.css';
 import HamburgerMenu from './HamburgerMenu/HamburgerMenu';
 import NavigationMenuList from './NavigationMenuList/NavigationMenuList';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 function NavigationMenu(props) {
 
@@ -33,9 +35,9 @@ function NavigationMenu(props) {
     if (props.position == 'main'){
         return (
             <div id='navId' style={{ backgroundColor: '#fff' }} className={styles.navigationMenu} >
-                <NavigationMenuList navigation='NavigationMenuMain' including='basic' />
+                <NavigationMenuList navigation='NavigationMenuMain' onClick={props.setFilter} filters={props.filter} including='basic' />
                 <div className={styles.navigationMenuLogo}>
-                     <h1 className={styles.navigationMenuLogoHeader}>Soa Shop</h1>
+                     <Link to='/Soa-Shop' className={styles.navigationMenuLogoHeader}>Soa Shop</Link>
                 </div>
                 <NavigationMenuList navigation='NavigationMenuSecondary' styling='normal' svg='yes' including='svg' />
                 <HamburgerMenu />
@@ -54,4 +56,13 @@ function NavigationMenu(props) {
     }
 }
 
-export default NavigationMenu
+const mapStateToProps = state => {
+    return {
+        filter:state.sort.filter,
+        setFilter:state.sort.setFilter
+    }
+}
+
+
+
+export default connect(mapStateToProps, null)(NavigationMenu)

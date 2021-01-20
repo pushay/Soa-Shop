@@ -20,7 +20,6 @@ function NavigationCredits(){
                     <p className={styles.navigationBottomText}>
                         Dominika Sobocińska
                     </p> 
-                    <Svg to='https://github.com/pushay' element={NavigationCreditsText.NavigationCreditsText[4]} />
                     <div className={styles.credits}>
                         <p>Icons made by <a className={styles.creditsText} href="https://www.flaticon.com/authors/iconixar" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
                         </p>

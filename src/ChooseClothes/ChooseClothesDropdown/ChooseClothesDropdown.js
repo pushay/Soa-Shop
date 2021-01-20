@@ -3,7 +3,7 @@ import styles from './ChooseClothesDropdown.module.css';
 import text from './chooseClothesDropdownText'
 import * as actionTypes from '../../store/actions';
 import { connect } from 'react-redux';
-import Svg from '../../Components/Svg/Svg';
+import Button from '../../Components/Button/Button';
 import NavigationCreditsText from '../../Components/Navigation/NavigationCredits/NavigationCreditsText';
 
 function Dropdown(props) {
@@ -15,32 +15,36 @@ function Dropdown(props) {
      const SortHandler = (id) => {
         setSortbyState(id)
     }
+
+    const SortsforFilters = (filterValue) => {
+        if (props.onClick) {
+            props.onClick({...props.filters, 'sorted' : filterValue})
+        }
+    }
+
+    const chooseSort = (element) => {
+        if (props.choose === 'Choose size') {
+            props.onStoreSort(element);
+        }
+        else if (props.choose === 'Choose quality') {
+            props.onStoreSortQuality(element)
+        }
+        else if (props.choose === 'Sort by') {
+                SortsforFilters(element)
+        }
+            SortHandler(element);
+    }
+
+    const style = {transform: props.showDroplist ? 'rotate(180deg)' : 'rotate(0deg)'}
+
     return (
          <div className={styles.chooseClothesSort}>
-            <button onClick={() => setShowDroplist(!showDroplist)} className={styles.chooseClothesSortButton}>
-                {props.choose}
-                <Svg className={styles.chooseClothesSortButtonIcon}  styled={{transform: showDroplist ? 'rotate(180deg)' : ''}} element={NavigationCreditsText.NavigationCreditsText[5]}/>
-            </button>
+            <Button svgStyle={style} element={NavigationCreditsText.SortButton[0]} svg='yes' choose={props.choose} onClick={ () => setShowDroplist(!showDroplist)} className={styles.chooseClothesSortButton} showDroplist={showDroplist} />
             <div id='chooseClothesDivList' style={{ display: showDroplist ? 'block' : 'none' }} className={styles.chooseClothesDivList}>
             {
                 text.SortClothes[props.choose].map(element => {
-                    if (element === 'clear Sort' && props.sortState === '') return null
                     return (
-                         <li onClick={() => {
-                            if (props.choose === 'Choose size') {
-                                props.onStoreSort(element);
-                            }
-                            else if (props.choose === 'Choose quality') {
-                                props.onStoreSortQuality(element)
-                            }
-                            else if (props.choose === 'Sort by') {
-                                if (element === 'clear Sort') props.setSortState('');
-                                else props.setSortState(element);
-                            }
-                                SortHandler(element);
-                            }}
-                            style={{backgroundColor: sortbyState === element ? 'rgb(26, 25, 25)' : 'white',
-                         color: sortbyState === element ? 'white' : 'black'}} id={element} key={element} value={element} className={styles.dropdownElement}>{element}</li>
+                         <li onClick={() => {chooseSort(element)}} style={{backgroundColor: sortbyState === element ? 'rgb(26, 25, 25)' : 'white', color: sortbyState === element ? 'white' : 'black'}} id={element} key={element} value={element} className={styles.dropdownElement}>{element}</li>
                     )
                 })
                 }
@@ -48,14 +52,6 @@ function Dropdown(props) {
         </div> 
         
     )
-}
-
-
-const mapStateToProps = state => {
-    return {
-        sortValue:state.sort.sortValue,
-        sortQuality:state.sortQual.sortQuality
-    }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -70,4 +66,4 @@ const mapDispatchToProps = dispatch => {
     })
 }}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dropdown);
+export default connect(null, mapDispatchToProps)(Dropdown);

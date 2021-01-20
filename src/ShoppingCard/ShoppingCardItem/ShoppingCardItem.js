@@ -1,16 +1,27 @@
 import React from 'react';
-import text from '../../ChooseClothes/chooseClothesListOfClothesText';
+import clothesText from '../../ChooseClothes/chooseClothesListOfClothesText';
 import styles from './ShoppingCardItem.module.css';
 import ShoppingCardInformation from '../ShoppingCardInformation/ShoppingCardInformation';
 
-
 function ShoppingCardItem(props){
+
+    const matchPhoto = (id) => {
+        let image;
+        clothesText.AllClothes.map((thing) => {
+            if (thing.id == id) {
+                image = thing.img
+            }
+            return thing;
+        })
+        return image
+    }
+
     return(
         <div key={props.index} className={styles.shoppingCardListItem}>
-            <img className={styles.shoppingCardImage} src={text.AllClothes[props.element.id].img} alt='' />
+            <img className={styles.shoppingCardImage} src={matchPhoto(props.element.id)} alt='' />
             <div className={styles.shoppingCardBlock}>
-                <h1 className={styles.shoppingCardHeader}>{text.AllClothes[props.element.id].name}</h1>
-                <ShoppingCardInformation classDiv={styles.shoppingCardSortBlock} classMain={styles.shoppingCardListText} classText={styles.shoppingCardListText} main='Price: ' text={text.AllClothes[props.element.id].price}  />
+                <h1 className={styles.shoppingCardHeader}>{props.element.name}</h1>
+                <ShoppingCardInformation classDiv={styles.shoppingCardSortBlock} classMain={styles.shoppingCardListText} classText={styles.shoppingCardListText} main='Price: ' text={props.element.price}  />
                 <ShoppingCardInformation classDiv={styles.shoppingCardSortBlock} classMain={styles.shoppingCardListText} classText={styles.shoppingCardListText} main='Size: ' text={props.element.size}  />
                 <ShoppingCardInformation classDiv={styles.shoppingCardSortBlock} classMain={styles.shoppingCardListText} classText={styles.shoppingCardListText} main='Quality: ' text={props.element.quality}  />
                 <ShoppingCardInformation classDiv={styles.shoppingCardSortBlock} classMain={styles.shoppingCardListText} classText={styles.shoppingCardListText} main='Quantity: ' text={props.element.quantity}  />

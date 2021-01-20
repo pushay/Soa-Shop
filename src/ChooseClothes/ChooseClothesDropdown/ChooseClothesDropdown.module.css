@@ -37,7 +37,7 @@
     list-style: none;
     border: 1px solid black;
     border-top: 0;
-    width: 218px;
+    width: 220px;
     color: rgb(10, 10, 10);
     height: 40px;
     text-align: center;
@@ -63,7 +63,7 @@
         font-size: 0.95rem;
     }
     .dropdownElement {
-        width: 169px;
+        width: 180px;
         height: 50px;
         justify-content: flex-start;
         padding-left:0.5rem;
@@ -80,24 +80,12 @@
         height: 35px;
     }
     .dropdownElement {
-        width: 149px;
+        width: 160px;
     }
     
     
 }
 
-@media (max-width:484px) {
-    .chooseClothesSortButton {
-        width: 180px;
-        font-size: 0.95rem;
-    }
-    .dropdownElement {
-        width: 169px;
-        height: 50px;
-        
-    }
-    
-}
 
 
 

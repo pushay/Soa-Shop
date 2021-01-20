@@ -4,9 +4,6 @@ import ImageSlider from '../Components/ImageSlider/ImageSlider'
 import Section from '../Components/Section/Section'
 import SectionCloth from '../Components/SectionCloth/SectionCloth';
 
-
-
-
 function HomePage() {
     return (
         <Auxiliary>

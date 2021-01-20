@@ -6,8 +6,8 @@ import ChooseClothesSingleClothImage from './ChooseClothesSingleClothImage/Choos
 function ChooseClothesSingleCloth(props){
     return(
         <div className={styles.chooseSingleClothBlock}>
-            <ChooseClothesSingleClothImage  image={props.image}/>
-            <ChooseClothesSingleClothDescription  image={props.image} />          
+            <ChooseClothesSingleClothImage id={props.cloth.id}  photo={props.cloth.image} />
+            <ChooseClothesSingleClothDescription image={props.cloth} />          
         </div>
     )
 }

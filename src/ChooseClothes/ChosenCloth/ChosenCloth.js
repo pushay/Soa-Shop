@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import styles from './ChosenCloth.module.css';
-import Auxiliary from '../../HOC/Auxiliary';
 import { connect } from 'react-redux';
 import {useState} from 'react'
-import text from '../chooseClothesListOfClothesText';
 import * as actionTypes from '../../store/actions';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import ClothesShopCard from '../ClothesShopCard/ClothesShopCardPopUp'
 import ChosenClothOptions from './ChosenClothOptions/ChosenClothOptions';
+import Button from '../../Components/Button/Button';
+import clothesText from '../chooseClothesListOfClothesText';
 
 
 function ChoosenCloth(props) {
@@ -17,10 +17,20 @@ function ChoosenCloth(props) {
     const [showShopCard, setShowShopCard] = useState(false)
     const [disabledSize, setDisabledSize] = useState(false)
     const [disabledQuality, setDisabledQuality] = useState(false)
+    const [sqlData, setsqlData] = useState([])
 
     useEffect(() => {
+
+        fetch('https://database-test-832.herokuapp.com/', {
+            method: 'POST',
+            mode: 'cors',
+        }).then(response => response.json()).then(data => {
+            setsqlData(data)
+        })
+
         if (props.sortValue !== 0) setSortSize(props.sortValue);
         if (props.sortQuality !==0) setSortQuality(props.sortQuality)
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -38,14 +48,13 @@ function ChoosenCloth(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sortQuality])
 
-
-
-    const SortSizeHandler = (span) => {
-        setSortSize(span)
-    }
-
-    const SortQualityHandler = (spanQuality) => {
-        setSortQuality(spanQuality)
+    const SortHandler = (span, sort) => {
+        if (sort == 'size'){
+              setSortSize(span)
+        }
+        else {
+            setSortQuality(span)
+        }
     }
 
     const ShowShopCardHandler = () => {
@@ -55,45 +64,64 @@ function ChoosenCloth(props) {
         }, 6000)
     }
 
+    const addingItems = () => {
+        if (sortSize === 0) setDisabledSize(true);
+        if (sortQuality === 0) setDisabledQuality(true);
+        if (sortSize === 0 || sortQuality === 0) return;
+
+        if (price !='' && name !=''){
+            props.onGetShoppIds(name,props.imageId, sortSize, sortQuality, price);
+            ShowShopCardHandler()
+        }
+     
+    }
+
+    const matchInfo = (id, type, data) => {
+        let thing;
+        data.map((element) => {
+            if (element.id == id){
+                thing = element[type];
+            }
+            return element;
+        })
+        return thing;
+    }
+    
+    const price = matchInfo(props.imageId, 'price', sqlData);
+    const name = matchInfo(props.imageId, 'name', sqlData); 
+   
 
     return (
         <div className={styles.seeChosenClothSection}>
-            <Auxiliary>
-                    <div className={styles.seeChosenClothBlock}>
-                            <div className={styles.seeChosenCloth}>
-                               <img alt=''className={styles.seeChosenClothImage} key={text.AllClothes[props.imageId].id} src={text.AllClothes[props.imageId].img} /> 
-                            </div>
-                            <div className={styles.seeChosenDescription}>
-                                <h1 className={styles.seeChosenTitleHeader}>{text.AllClothes[props.imageId].name}</h1>
-                                <ChosenClothOptions option='Choose size' header='SIZE: ' classDiv={styles.seeChosenSizeSpanBlock} disabledSize={disabledSize} classSpan={styles.seeChosenSizeSpan} sortSize={sortSize} sendValue={SortSizeHandler} />
-                                <ChosenClothOptions option='Choose quality' header='Quality: '                              classDiv={styles.seeChosenSizeSpanBlock} disabledQuality={disabledQuality} sortQuality={sortQuality} sendValue={SortQualityHandler} classSpan={styles.seeChosenQualitySpan} />
-                                <div className={styles.seeChosenTextBlock}>
-                                        <h1 className={styles.seeChosenHeader}>
-                                            Description
-                                        </h1>
-                                        <div className={styles.seeChosenTextElement}>
-                                            {text.AllClothes[props.imageId].description}
-                                        </div>
-                                </div>
-                                <div className={styles.seeChosenButtonBlock}>
-                                    <button onClick={()=> {
-                                            if (sortSize === 0) setDisabledSize(true);
-                                            if (sortQuality === 0) setDisabledQuality(true);
-                                            if (sortSize === 0 || sortQuality === 0) return;
-
-                                            props.onGetShoppIds(props.imageId, sortSize, sortQuality, text.AllClothes[props.imageId].price);
-                                            ShowShopCardHandler()
-                                        }}
-                                        className={styles.seeChosenButton}>Add to cart
-                                    </button>
-                                    <Link to={"/shopping-cart"} className={styles.shoppingCardLink}>
-                                        Go to cart
-                                    </Link>
-                                </div>
-                            </div>
+            <div className={styles.seeChosenClothBlock}>
+                <div className={styles.seeChosenCloth}>
+                    <img alt='' className={styles.seeChosenClothImage} key={sqlData} src={matchInfo(props.imageId, 'img', clothesText.AllClothes)} /> 
+                </div>
+                <div className={styles.seeChosenDescription}>
+                    <h1 className={styles.seeChosenTitleHeader}>{matchInfo(props.imageId, 'name',sqlData)}</h1>
+                    <ChosenClothOptions option='Choose size' header='SIZE: ' classDiv={styles.seeChosenSizeSpanBlock} disabledSize={disabledSize} classSpan={styles.seeChosenSizeSpan} sortSize={sortSize} sort='size' sendValue={SortHandler} />
+                    <ChosenClothOptions option='Choose quality' header='Quality: ' sort='quality' classDiv={styles.seeChosenSizeSpanBlock} disabledQuality={disabledQuality} sortQuality={sortQuality} sendValue={SortHandler} classSpan={styles.seeChosenQualitySpan} />
+                    <div className={styles.seeChosenPrice}>
+                        <h1 className={styles.seeChosenHeader}>Price: </h1>
+                        <p className={styles.seeChosenText} style={{marginLeft:'0.5rem'}}>{matchInfo(props.imageId, 'price', sqlData)}$</p>
+                    </div>    
+                    <div className={styles.seeChosenTextBlock}>
+                        <h1 className={styles.seeChosenHeader}>
+                            Description
+                        </h1>
+                        <div className={styles.seeChosenTextElement}>
+                            {matchInfo(props.imageId, 'description', sqlData)}
+                        </div>
                     </div>
-            </Auxiliary>
-            <ClothesShopCard open={showShopCard} />
+                    <div className={styles.seeChosenButtonBlock}>
+                        <Button svg='no' className={styles.seeChosenButton} choose='Add to cart' onClick={()=> {addingItems()}}/>
+                            <Link to={"/shopping-cart"} className={styles.shoppingCardLink}>
+                                Go to cart
+                                </Link>
+                    </div>
+                </div>
+            </div>
+        <ClothesShopCard open={showShopCard} />
     </div>
     )
 }
@@ -102,7 +130,7 @@ const mapStateToProps = state => {
     return {
         imageId:state.img.imageId,
         sortValue:state.sort.sortValue,
-        sortQuality:state.sortQual.sortQuality,
+        sortQuality:state.sort.sortQuality,
         imageIdShop:state.shop.list
 
     }
@@ -122,10 +150,10 @@ const mapDispatchToProps = dispatch => {
         type:actionTypes.STORE_ID,
         imageId: id
     }),
-    onGetShoppIds:(id, size, quality, price) => dispatch({
+    onGetShoppIds:(name, id, size, quality, price) => dispatch({
         type:actionTypes.GET_SHOPPCARD,
-        imageIdShop:{id, size, quality, price}
+        imageIdShop:{name, id, size, quality, price}
     })
 }}
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChoosenCloth)
+export default connect(mapStateToProps, mapDispatchToProps) (withRouter(ChoosenCloth))

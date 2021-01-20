@@ -8,25 +8,26 @@ import TextBlock from '../TextBlock/TextBlock';
 
 
 function ImageSlider(){
-
-    const ImageSliderWork = () => {
-        setInterval(function(){
-            setCarouselSlide((prevState) => {
-                if (prevState === carouselSlides[0]) {
-                    document.getElementById('carouselId').style.backgroundImage = "linear-gradient(to left, rgba(7, 7, 7, 0) 50%, rgb(0, 0, 0) 100%), url("+ shopp +")";
-                    return carouselSlides[1]
-                }
-                else {
-                    document.getElementById('carouselId').style.backgroundImage = "linear-gradient(to left, rgba(7, 7, 7, 0) 50%, rgb(0, 0, 0) 100%), url("+ joshua +")";
-                    return carouselSlides[0]
-                }
-            })
-        },5000)
-    }
     useEffect(()=> {
-        ImageSliderWork()
+        const interval = setInterval(slideCarousel,5000)
     // eslint-disable-next-line react-hooks/exhaustive-deps
+        return (() => {
+            clearInterval(interval);
+        })
     }, [])
+
+    const slideCarousel = () => {
+        setCarouselSlide((prevState) => {
+            if (prevState === carouselSlides[0]) {
+                document.getElementById('carouselId').style.backgroundImage = "linear-gradient(to left, rgba(7, 7, 7, 0) 50%, rgb(0, 0, 0) 100%), url("+ shopp +")";
+                return carouselSlides[1]
+            }
+            else {
+                document.getElementById('carouselId').style.backgroundImage = "linear-gradient(to left, rgba(7, 7, 7, 0) 50%, rgb(0, 0, 0) 100%), url("+ joshua +")";
+                return carouselSlides[0]
+            }
+        })
+    }
 
     const [carouselSlide, setCarouselSlide ] = useState(carouselSlides[0])
    

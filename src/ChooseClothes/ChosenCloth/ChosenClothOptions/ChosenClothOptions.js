@@ -12,7 +12,7 @@ function ChosenClothOptions(props){
                         <span key={index} style={{backgroundColor: props.sortSize === span ? 'rgb(26, 25, 25)' : 'white',
                         color: props.sortSize === span ? 'white' : 'black', borderColor : props.disabledSize ? '#E60000' : 'black', borderBottom: props.sortQuality === span ? '1px solid black' : ''}
                         }
-                         className={props.classSpan} onClick={() => props.sendValue(span)} value={span.value} >
+                         className={props.classSpan} onClick={() => props.sendValue(span, props.sort)} value={span.value} >
                             {span}
                         </span>
                     )

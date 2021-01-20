@@ -9,6 +9,7 @@
     border: 10px solid rgb(241, 241, 241);
     overflow-y: scroll;
     height: 140px;
+    cursor: pointer;
     
 }
 

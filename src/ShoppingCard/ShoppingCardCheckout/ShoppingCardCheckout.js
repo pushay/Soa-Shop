@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './ShoppingCardCheckout.module.css';
-import {Link} from 'react-router-dom';
 import ShoppingCardInformation from '../ShoppingCardInformation/ShoppingCardInformation';
+import Button from '../../Components/Button/Button';
+import {Link} from 'react-router-dom';
 
 function ShoppingCardCheckout(props){
     return(
@@ -10,11 +11,9 @@ function ShoppingCardCheckout(props){
                 <ShoppingCardInformation classDiv={styles.shoppingCardCheckoutTotal} classMain={styles.shoppingCardText} classText={styles.shoppingCardText} main='SUBTOTAL:' text={props.Subtotal} />
                 <div className={styles.shoppingCardCheckoutButtons}>
                     <Link to='/chosenCloth'>
-                        <button className={styles.shoppingCardButton}>Go back</button>
-                    </Link>
-                    <button className={styles.shoppingCardButton}>
-                        Checkout
-                    </button>
+                    <Button svg='no' className={styles.shoppingCardButton} choose='Go back'/>
+                    </Link> 
+                    <Button svg='no' className={styles.shoppingCardButton} choose='Checkout'/>
                 </div>
         </div>
     )

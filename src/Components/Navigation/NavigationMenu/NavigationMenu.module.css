@@ -73,6 +73,8 @@
 
 .navigationMenuLogoHeader {
     font-size: 3rem;
+    text-decoration: none;
+    color: black;
 }
  /* STYLES NAVIGATION SECONDARY  */
 .navigationMenuSecondary  {
@@ -204,6 +206,11 @@
 
     .navigationMenuLogoHeader {
         font-size: 2.1rem;
+        font-weight: bold;
+    }
+
+    .navigationMenu {
+
     }
 
     .link {
@@ -242,6 +249,9 @@
     }
     .navigationMenuSecondary {
         display: none;
+    }
+    .navigationMenuLogo {
+        padding-right: 0rem;
     }
 
 }

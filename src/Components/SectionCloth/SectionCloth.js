@@ -1,27 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './SectionCloth.module.css';
-import SectionClothText from '../../ChooseClothes/chooseClothesListOfClothesText';
-
-
-let images = SectionClothText.AllClothes
+import clothesText from '../../ChooseClothes/chooseClothesListOfClothesText';
 
 function SectionCloth() {
-    return (
+
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+         let formData = new FormData()
+            formData.append('sorted','Bestsellers') 
+        fetch('https://database-test-832.herokuapp.com/', {
+            method: 'POST',
+            mode: 'cors',
+            body: formData
+        }).then(response => response.json()).then(data => {
+            setData(data)
+            
+        })
+    },[])
+
+
+    const matchPhoto = (id) => {
+        let image;
+        clothesText.AllClothes.map((thing) => {
+            if (thing.id == id) {
+                image = thing.img
+            }
+            return thing;
+        })
+        return image
+    }    
+
+
+     return (
         <div className={styles.sectionClothBlock}>
-            { images.map(image => {
-                if (image['sorted'] !== 'Bestsellers') {
-                    return null
-                }
-                else {
-                    return (
+            { data.map(image => { 
+                    return(
                         <div key={image.id} className={styles.sectionClothItem}>
                             <div className={styles.sectionClothStyled}>
-                                <img key={images.name} src={image.img} alt={image.img} className={styles.sectionCloth} price={image.price} />
+                                <img key={image.name} src={matchPhoto(image.id)} alt={image.name} className={styles.sectionCloth} price={image.price} />
                             </div>
                         </div>
-                    );
+                    )
                 }
-            })}
+            )}
         </div> 
     )
 }

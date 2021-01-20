@@ -100,6 +100,14 @@
 .seeChosenTextElement {
     font-size: 1rem;
 }
+.seeChosenText {
+    font-size: 0.95rem;
+}
+
+.seeChosenPrice {
+    margin-bottom: 0.5rem;
+    display: flex;
+}
 /* BUTTON */
 .seeChosenButtonBlock {
     margin-bottom:1rem;
@@ -205,6 +213,11 @@
     .seeChosenTextElement {
         font-size: 0.9rem;
     }
+
+    .seeChosenText {
+        font-size: 0.85rem;
+    }
+
     .seeChosenQualitySpan {
         font-size: 0.9rem;    
     }
@@ -426,6 +439,12 @@
     .seeChosenClothImage {
         height: 340px;
         }
+
+    .seeChosenText {
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+
     .seeChosenTitleHeader {
         font-size: 1.1rem;
     }

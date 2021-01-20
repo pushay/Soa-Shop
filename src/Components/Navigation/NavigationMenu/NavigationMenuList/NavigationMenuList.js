@@ -6,12 +6,18 @@ import Svg from '../../../Svg/Svg';
 
 function NavigationMenuList(props){
 
+    const matchFilters = (filterKey, filterValue) => {
+        if (props.onClick) {
+            props.onClick({...props.filters, [filterKey] : filterValue})
+        }
+    }
+
     if (props.navigation == 'NavigationHamburger'){
         return(
             <div>
-                {NavigationMenuListText.NavigationMenuList[props.navigation].map((element)=> {
+                {NavigationMenuListText.NavigationMenuList[props.navigation].map((element, index)=> {
                     return(
-                        <Link className={styles.link2} onClick={props.onClick ? props.onClick : null} to={element.to} >{element.text}</Link>
+                        <Link key={index} className={styles.link2} onClick={props.onClick ? () => {props.onClick()} : null} to={element.to} >{element.text}</Link>
                     )
                 })}     
             </div>
@@ -24,9 +30,9 @@ function NavigationMenuList(props){
                     {props.with ? 
                     <h1 className={styles.navigationMenuList__header} >{props.with}</h1>
                      : null}
-                     {NavigationMenuListText.NavigationMenuList[props.navigation].map((element,index) => {
+                     {NavigationMenuListText.NavigationMenuList[props.navigation].map((element, index) => {
                         return(
-                            <li  key={index} style={{width:props.styled == 'chooseClothes' ? '100px' : '', marginLeft:props.styled == 'chooseClothes' ? '0.5rem' : '0' , marginRight:props.including == 'svg' ? '1rem' : '0'}} className={props.styling == 'normal' ? styles.navigationMenuList__element : styles.linkBlack}   >
+                            <li onClick={() => {matchFilters(element.filterKey, element.filterValue)}} key={index} style={{width:props.styled == 'chooseClothes' ? '100px' : '', marginLeft:props.styled == 'chooseClothes' ? '0.5rem' : '0' , marginRight:props.including == 'svg' ? '1rem' : '0'}} className={props.styling == 'normal' ? styles.navigationMenuList__element : styles.linkBlack}   >
                                 <Link className={props.styling == 'normal' ? styles.navigationMenuList__link : styles.link} to={element.to}>
                                     {props.including == 'svg' ? <Svg element={element.svg} /> 
                                     :  element.text }

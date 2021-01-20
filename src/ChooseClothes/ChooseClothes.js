@@ -1,68 +1,104 @@
 import React, { useEffect,useState} from 'react';
 import styles from './ChooseClothes.module.css';
 import ChooseClothesDropdown from './ChooseClothesDropdown/ChooseClothesDropdown';
-import text from './chooseClothesListOfClothesText';
-import {withRouter} from 'react-router-dom';
 import NavigationMenuList from '../Components/Navigation/NavigationMenu/NavigationMenuList/NavigationMenuList';
 import ChooseClothesSingleCloth from './ChooseClothesSingleCloth/ChooseClothesSingleCloth';
-
-
-let clothesWithDiscription = text.AllClothes
+import {connect} from 'react-redux';
+import * as actionTypes from '../store/actions';
+import Button from '../Components/Button/Button';
 
 function ChooseClothes(props) {
 
-    const [startState, setStartState] = useState(props.location.pathname);
-    const [sortFilter, setSortFilter] = useState('');
+    const [sqlData, setsqlData] = useState([])
+    const [filters, setFilters] = useState({})
+
+    useEffect(()=> {
+        props.onStoreFilters(filters, setFilters)
+            fetchSql()
+    },[])
 
     useEffect(() => {
-        setStartState(props.location.pathname)
-    }, [props.location.pathname])
+        fetchSql()
+    }, [filters])
 
+    const clearSort = () => {
+        setFilters({})
+    }
+
+    const fetchSql = () => {
+        let formData = new FormData()
+        if (filters){
+            for (let [filterKey, filterValue] of Object.entries(filters)) {
+                formData.append(filterKey, filterValue) }
+        }
+        fetch('https://database-test-832.herokuapp.com/', {
+            method: 'POST',
+            mode: 'cors',
+            body: formData
+        }).then(response => response.json()).then(data => {
+            setsqlData(data)
+        })
+    }
+
+    const getSorts = () => {
+        let sorts = '';
+        for (let value of Object.values(filters)){
+            sorts += value + ';  ';
+        }
+        return sorts
+        }
+       
     return (
-    
         <div className={styles.chooseClothes}>
             <div className={styles.chooseClothesSidebar}>
                 <div className={styles.chooseClothesOffers}>
-                    <NavigationMenuList with='Arrivals' styled='chooseClothes' navigation='NavigationChooseClothes1' />
+                    <NavigationMenuList onClick={setFilters} filters={filters} with='Arrivals' styled='chooseClothes' navigation='NavigationChooseClothes1' />
                 </div>
                 <div className={styles.chooseClothesByProduct}>
-                   <NavigationMenuList with='Shop by Product' styled='chooseClothes' navigation='NavigationChooseClothes2' />
+                   <NavigationMenuList onClick={setFilters} filters={filters} filter='type' with='Shop by Product' styled='chooseClothes' navigation='NavigationChooseClothes2' />
                 </div>
+                {Object.keys(filters).length !== 0 ? 
+                    <div style={{width:'300px', marginBottom:'2rem'}}>
+                        Sorts applied:
+                        <p style={{textDecoration:'underline'}}>{getSorts()} </p> 
+                    </div>  
+                : null}
+                <Button svg='no' clear='clearSort' onClick={()=> {clearSort()}} choose='Clear sort' className={styles.chooseClothesSortButton}/>
                 <div className={styles.chooseClothesSortBlock}>
                     <h1 className={styles.chooseClothesHeader} >Filters and Sorts</h1>
                     <div className={styles.dropdownforSort}>
-                        <ChooseClothesDropdown choose='Sort by' sortState={sortFilter} setSortState={setSortFilter}/>
+                        <ChooseClothesDropdown onClick={setFilters} filters={filters} choose='Sort by'/>
                         <ChooseClothesDropdown choose='Choose size'/>
                         <ChooseClothesDropdown choose='Choose quality'/>
                     </div>
                 </div>
             </div>
             <div className={styles.chooseClothesMain}>
-                {clothesWithDiscription.filter(cloth => {
-                    if (startState === '/choose-clothes/women-collection' && cloth.sex.includes('woman')) return true;
-                    else if (startState === '/choose-clothes/men-collection' && cloth.sex.includes('man')) return true;
-                    else if (startState === '/choose-clothes/bestsellers' && cloth.sorted === 'Bestsellers') return true;
-                    else if (startState === '/choose-clothes/good-price' && cloth.price <= 25) return true;
-                    else if (startState ==='/choose-clothes/t-shirt' && cloth.productType === 't-shirt') return true;
-                    else if (startState ==='/choose-clothes/jumpsuit' && cloth.productType === 'jumpsuit') return true;
-                    else if (startState ==='/choose-clothes/hoodie' && cloth.productType === 'hoodie') return true
-
-                    else return false
-                }).filter(cloth => {
-                    if (sortFilter === '') return true;
-                    else if (cloth.sorted === sortFilter) return true;
-                    else return false
-                }).map((image,index) => {
-                    return (
+                {sqlData.map((cloth, index)=> {
+                    return(
                         <div key={index} className={styles.chooseSingleClothBlock}>
-                            <ChooseClothesSingleCloth image={image} />
+                            <ChooseClothesSingleCloth cloth={cloth} />
                         </div>
                     )
                 })}
-
             </div>
         </div>
     )
 }
 
-export default withRouter(ChooseClothes)
+const mapDispatchToProps = dispatch => {
+    return {
+    onStoreFilters:(filters, setFilters) => dispatch({
+        type:actionTypes.STORE_FILTERS,
+        filters,
+        setFilters
+    }),
+}}
+
+const mapStateToProps = state => {
+    return {
+        filters:state.sort.filter
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChooseClothes)

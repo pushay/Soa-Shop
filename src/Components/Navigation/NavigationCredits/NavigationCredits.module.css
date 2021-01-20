@@ -20,7 +20,7 @@
 .navigationBottomMediaContacts {
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 190px;
     margin: 0 0 2rem 0.5rem;
 }
 
@@ -35,7 +35,6 @@
 .credits {
     color: white !important;
     font-size: 0.5rem;
-    margin-top: 2rem;
 }
 
 .credits a {
@@ -117,7 +116,6 @@
     }
     .credits {
         width: 100%;
-        margin-top: 0rem;
     }
 
 }

@@ -1,8 +1,8 @@
 export default {
     NavigationMenuList : {
         NavigationMenuMain :[
-            {to:'/choose-clothes/women-collection', text:'Women'},
-            {to:'/choose-clothes/men-collection', text:'Men'},
+            {to:'/choose-clothes/women-collection', text:'Women',filterKey:'sex', filterValue:'woman'},
+            {to:'/choose-clothes/men-collection', text:'Men', filterKey:'sex', filterValue:'man'},
             {to:'/Soa-Shop', text:'Campaign'}
         ],
         NavigationMenuSecondary : [{ to:'/Soa-Shop', svg:'<svg className={styles.svgHome} version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 32 32"><title>home</title><path d="M32 18.451l-16-12.42-16 12.42v-5.064l16-12.42 16 12.42zM28 18v12h-8v-8h-8v8h-8v-12l12-9z"></path></svg>'},
@@ -16,10 +16,10 @@ export default {
             {to:'/choose-clothes/bestsellers', text:'Bestsellers'}
         ],
         NavigationChooseClothes1:[
-            {to:'/choose-clothes/women-collection', text:'Women'}, {to:'/choose-clothes/men-collection', text:'Men'}, {to:'/choose-clothes/bestsellers', text:'Bestsellers'}, {to:'/choose-clothes/good-price', text:'Good price'},
+            {to:'/choose-clothes/women-collection', text:'Women',filterKey:'sex', filterValue:'woman'}, {to:'/choose-clothes/men-collection', text:'Men',filterKey:'sex', filterValue:'man'}, {to:'/choose-clothes/bestsellers', text:'Bestsellers',filterKey:'sorted', filterValue:'Bestsellers'}, {to:'/choose-clothes/good-price',filterKey:'price', text:'Good price', filterValue:'Good price'},
         ],
         NavigationChooseClothes2:[
-            {to:'/choose-clothes/t-shirt', text:'T-shirt'}, {to:'/choose-clothes/jumpsuit',text:'Jumpsuit'}, {to:'/choose-clothes/hoodie', text:'Hoodie'}
+            {to:'/choose-clothes/t-shirt', text:'T-shirt', filterValue:'t-shirt',filterKey:'type'}, {to:'/choose-clothes/jumpsuit',text:'Jumpsuit',filterKey:'type', filterValue:'jumpsuit'}, {to:'/choose-clothes/hoodie', text:'Hoodie', filterKey:'type', filterValue:'hoodie'}
         ],
         NavigationHamburger:[
             {to:'/Soa-shop', text:'Home'}, {to:'/choose-clothes/women-collection',text:'Women'}, {to:'/choose-clothes/men-collection', text:'Men'}, {to:'/', text:'Campaign'}, {to:'/shopping-cart', text:'Shopping Card'}

@@ -19,7 +19,7 @@ function HamburgerMenu() {
                 </div>
                 <div style={{display: showHamburgerMenu ? 'block' : 'none'}} className={styles.hamburgerMenuBackground}>
                     <ul className={styles.hamburgerMenuList}>
-                        <NavigationMenuList  classNameList={styles.hamburgerMenuList} onClick={() => setShowHamburgerMenu(false)} navigation='NavigationHamburger' />
+                        <NavigationMenuList  classNameList={styles.hamburgerMenuList} onClick={() => {setShowHamburgerMenu(false)}} navigation='NavigationHamburger' />
                     </ul> 
                 </div>
             </div>

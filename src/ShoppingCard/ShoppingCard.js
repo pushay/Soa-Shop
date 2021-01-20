@@ -32,13 +32,12 @@ function ShoppingCard(props) {
         let sum = 0;
         // eslint-disable-next-line array-callback-return
         Products.map(prod => {
-            console.log(prod.price)
             sum = sum + (prod.price * prod.quantity)
         })
         setSubtotal(sum)
         props.onStoreState(Products)
     },[Products])
-
+    
     return (
         <div className={styles.shoppingCardSection}>
             <div className={styles.shoppingCardInside}>
